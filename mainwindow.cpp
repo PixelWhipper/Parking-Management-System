@@ -1,81 +1,75 @@
 #include "mainwindow.h"
-#include "./ui_mainwindow.h"
-#include <QDateTime>
+#include "ui_mainwindow.h"
+#include <QMessageBox>
+#include <QLabel>
+#include <QVBoxLayout>
 
 MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent)
-    , ui(new Ui::MainWindow)
-    , availableSpots(10) // Initial number of spots
-    , occupiedSpots(0) {
+    : QMainWindow(parent), ui(new Ui::MainWindow)
+{
     ui->setupUi(this);
+    connect(ui->loginButton, &QPushButton::clicked, this, &MainWindow::Login);
+    connect(ui->signUpButton, &QPushButton::clicked, this, &MainWindow::Signup);
+    connect(ui->signUpLabel, &QLabel::linkActivated, this, &MainWindow::switchSignup);
+    QLabel *backToLogin = new QLabel("Already have an account? <a href=\"login\">Log in</a>");
+    backToLogin->setAlignment(Qt::AlignCenter);
+    backToLogin->setOpenExternalLinks(false);
+    connect(backToLogin, &QLabel::linkActivated, this, &MainWindow::switchLogin);
+    ui->verticalLayoutSignUp->addWidget(backToLogin);
 
-    ui->stackedWidget->setCurrentIndex(0); // Start with the login page
-    ui->parkingLogFrame->setVisible(false); // Initially hide the parking log
+    connect(ui->adminButton, &QPushButton::clicked, this, &MainWindow::on_adminButton_clicked);
+    connect(ui->userButton, &QPushButton::clicked, this, &MainWindow::on_userButton_clicked);
 
-    connect(ui->loginButton, &QPushButton::clicked, this, &MainWindow::attemptLogin);
-    connect(ui->parkCarButton, &QPushButton::clicked, this, &MainWindow::incrementSpot);
-    connect(ui->carLeftButton, &QPushButton::clicked, this, &MainWindow::decrementSpot);
-    connect(ui->enableLogCheckBox, &QCheckBox::toggled, this, &MainWindow::toggleParkingLog);
-
-    updateSpotLabels();
+    ui->stackedWidget->setCurrentWidget(ui->loginPage); // Ensure login page is the initial view
 }
 
-MainWindow::~MainWindow() {
+MainWindow::~MainWindow()
+{
     delete ui;
 }
 
-void MainWindow::attemptLogin() {
+void MainWindow::Login()
+{
     QString email = ui->emailEdit->text();
     QString password = ui->passwordEdit_login->text();
 
-    // **Replace with your actual authentication logic**
-    if (email == "admin" && password == "password") {
-        ui->stackedWidget->setCurrentIndex(1); // Switch to the dashboard page
+    if (userDatabase.contains(email) && userDatabase[email] == password) {
+        ui->stackedWidget->setCurrentWidget(ui->roleSelectPage); // Go to role selection after login
     } else {
         QMessageBox::warning(this, "Login Failed", "Invalid email or password.");
-        ui->passwordEdit_login->clear();
     }
 }
 
-void MainWindow::showDashboard() {
-    ui->stackedWidget->setCurrentIndex(1);
-}
-
-void MainWindow::incrementSpot() {
-    if (availableSpots > 0) {
-        availableSpots--;
-        occupiedSpots++;
-        updateSpotLabels();
-        if (ui->enableLogCheckBox->isChecked()) {
-            logParkingEvent("Car parked at " + QDateTime::currentDateTime().toString());
-        }
+void MainWindow::Signup()
+{
+    QString email = ui->emailEdit_signup->text();
+    QString password = ui->passwordEdit_signup->text();
+     if (email.isEmpty() || password.isEmpty()) {
+        QMessageBox::warning(this, "Sign Up Failed", "Email and password cannot be empty.");
+        return;
+    }
+    if (userDatabase.contains(email)) {
+        QMessageBox::warning(this, "Sign Up Failed", "Account already exists.");
     } else {
-        QMessageBox::information(this, "Parking Full", "No available parking spots.");
+        userDatabase[email] = password;
+        QMessageBox::information(this, "Success", "Account created. Please log in.");
+        ui->stackedWidget->setCurrentWidget(ui->loginPage); // Go back to login after signup
     }
 }
 
-void MainWindow::decrementSpot() {
-    if (occupiedSpots > 0) {
-        availableSpots++;
-        occupiedSpots--;
-        updateSpotLabels();
-        if (ui->enableLogCheckBox->isChecked()) {
-            logParkingEvent("Car left at " + QDateTime::currentDateTime().toString());
-        }
-    } else {
-        QMessageBox::information(this, "No Cars Parked", "No cars to leave.");
-    }
+void MainWindow::switchSignup()
+{
+    ui->stackedWidget->setCurrentWidget(ui->signUpPage);
 }
-
-void MainWindow::updateSpotLabels() {
-    ui->availableSpotsLabel->setText("Available Spots: " + QString::number(availableSpots));
-    ui->occupiedSpotsLabel->setText("Occupied Spots: " + QString::number(occupiedSpots));
+void MainWindow::switchLogin()
+{
+    ui->stackedWidget->setCurrentWidget(ui->loginPage);
 }
-
-void MainWindow::toggleParkingLog(bool checked) {
-    ui->parkingLogFrame->setVisible(checked);
+void MainWindow::on_adminButton_clicked()
+{
+    QMessageBox::information(this, "Admin Selected", "Navigating to admin interface (not implemented).");
 }
-
-void MainWindow::logParkingEvent(const QString& event) {
-    ui->parkingLogTextEdit->append(event);
+void MainWindow::on_userButton_clicked()
+{
+    QMessageBox::information(this, "User Selected", "Navigating to user interface (not implemented).");
 }

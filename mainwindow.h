@@ -2,18 +2,10 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <QStackedWidget>
-#include <QLineEdit>
-#include <QPushButton>
-#include <QLabel>
-#include <QMessageBox>
-#include <QCheckBox>
-#include <QTextEdit>
+#include <QMap>
 
 QT_BEGIN_NAMESPACE
-namespace Ui {
-class MainWindow;
-}
+namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
 
 class MainWindow : public QMainWindow {
@@ -24,18 +16,16 @@ public:
     ~MainWindow();
 
 private slots:
-    void attemptLogin();
-    void showDashboard();
-    void incrementSpot();
-    void decrementSpot();
-    void toggleParkingLog(bool checked);
+    void Login();
+    void Signup();
+    void switchSignup();
+    void switchLogin();
+    void on_adminButton_clicked();
+    void on_userButton_clicked();
 
 private:
     Ui::MainWindow *ui;
-    int availableSpots;
-    int occupiedSpots;
-
-    void updateSpotLabels();
-    void logParkingEvent(const QString& event);
+    QMap<QString, QString> userDatabase;
 };
-#endif // MAINWINDOW_H
+
+#endif
