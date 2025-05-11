@@ -7,23 +7,23 @@
     <x>0</x>
     <y>0</y>
     <width>600</width>
-    <height>430</height>
+    <height>480</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Admin Window</string>
+   <string>Admin Setup</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <widget class="QLabel" name="adminTitle">
+    <widget class="QLabel" name="setupTitle">
      <property name="font">
       <font>
-       <pointsize>24</pointsize>
+       <pointsize>20</pointsize>
        <bold>true</bold>
       </font>
      </property>
      <property name="text">
-      <string>Admin Interface</string>
+      <string>Parking Lot Setup</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -39,7 +39,7 @@
       <attribute name="title">
        <string>Parking Info</string>
       </attribute>
-      <layout class="QFormLayout" name="formLayout">
+      <layout class="QFormLayout" name="formLayout_2">
        <item row="0" column="0">
         <widget class="QLabel" name="locationLabel">
          <property name="text">
@@ -58,165 +58,210 @@
         </widget>
        </item>
        <item row="1" column="1">
-        <widget class="QSpinBox" name="levelsSpinBox"/>
+        <widget class="QSpinBox" name="levelsSpinBox">
+         <property name="minimum">
+          <number>1</number>
+         </property>
+         <property name="value">
+          <number>1</number>
+         </property>
+        </widget>
        </item>
        <item row="2" column="0">
         <widget class="QLabel" name="bikeCapacityLabel">
          <property name="text">
-          <string>Bike Parking Capacity:</string>
+          <string>Bike Capacity:</string>
          </property>
         </widget>
        </item>
        <item row="2" column="1">
-        <widget class="QSpinBox" name="bikeCapacitySpinBox"/>
+        <widget class="QSpinBox" name="bikeCapacitySpinBox">
+         <property name="minimum">
+          <number>0</number>
+         </property>
+        </widget>
        </item>
        <item row="3" column="0">
         <widget class="QLabel" name="minivanCapacityLabel">
          <property name="text">
-          <string>Minivan Parking Capacity:</string>
+          <string>Minivan Capacity:</string>
          </property>
         </widget>
        </item>
        <item row="3" column="1">
-        <widget class="QSpinBox" name="minivanCapacitySpinBox"/>
-       </item>
-       <item row="5" column="1">
-        <widget class="QPushButton" name="saveParkingInfoButton">
-         <property name="text">
-          <string>Save Parking Info</string>
+        <widget class="QSpinBox" name="minivanCapacitySpinBox">
+         <property name="minimum">
+          <number>0</number>
          </property>
         </widget>
        </item>
        <item row="4" column="0">
         <widget class="QLabel" name="carCapacityLabel">
          <property name="text">
-          <string>Car Parking Capacity:</string>
+          <string>Car Capacity:</string>
          </property>
         </widget>
        </item>
        <item row="4" column="1">
-        <widget class="QSpinBox" name="carCapacitySpinBox"/>
-       </item>
-       <item row="6" column="1">
-        <widget class="QPushButton" name="clearParkingInfoButton">
-         <property name="text">
-          <string>Clear Fields</string>
+        <widget class="QSpinBox" name="carCapacitySpinBox">
+         <property name="minimum">
+          <number>0</number>
          </property>
         </widget>
        </item>
-       <item row="4" column="0" colspan="2">
-        <widget class="QGroupBox" name="feesGroupBox">
-         <property name="title">
-          <string>Parking Fees (per hour)</string>
+       <item row="5" column="0">
+        <widget class="QLabel" name="busCapacityLabel">
+         <property name="text">
+          <string>Bus Capacity:</string>
          </property>
-         <widget class="QLabel" name="carFeeLabel">
-          <property name="geometry">
-           <rect>
-            <x>10</x>
-            <y>26</y>
-            <width>21</width>
-            <height>16</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>Car:</string>
-          </property>
-         </widget>
-         <widget class="QDoubleSpinBox" name="carFeeDoubleSpinBox">
-          <property name="geometry">
-           <rect>
-            <x>60</x>
-            <y>26</y>
-            <width>82</width>
-            <height>24</height>
-           </rect>
-          </property>
-          <property name="decimals">
-           <number>2</number>
-          </property>
-         </widget>
-         <widget class="QLabel" name="bikeFeeLabel">
-          <property name="geometry">
-           <rect>
-            <x>10</x>
-            <y>56</y>
-            <width>25</width>
-            <height>16</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>Bike:</string>
-          </property>
-         </widget>
-         <widget class="QDoubleSpinBox" name="bikeFeeDoubleSpinBox">
-          <property name="geometry">
-           <rect>
-            <x>62</x>
-            <y>56</y>
-            <width>82</width>
-            <height>24</height>
-           </rect>
-          </property>
-          <property name="decimals">
-           <number>2</number>
-          </property>
-         </widget>
-         <widget class="QLabel" name="minivanFeeLabel">
-          <property name="geometry">
-           <rect>
-            <x>10</x>
-            <y>86</y>
-            <width>46</width>
-            <height>16</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>Minivan:</string>
-          </property>
-         </widget>
-         <widget class="QDoubleSpinBox" name="minivanFeeDoubleSpinBox">
-          <property name="geometry">
-           <rect>
-            <x>62</x>
-            <y>86</y>
-            <width>82</width>
-            <height>24</height>
-           </rect>
-          </property>
-          <property name="decimals">
-           <number>2</number>
-          </property>
-         </widget>
-         <widget class="QLabel" name="carFeeLabel_2">
-          <property name="geometry">
-           <rect>
-            <x>180</x>
-            <y>30</y>
-            <width>21</width>
-            <height>16</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>Bus</string>
-          </property>
-         </widget>
-         <widget class="QDoubleSpinBox" name="carFeeDoubleSpinBox_2">
-          <property name="geometry">
-           <rect>
-            <x>210</x>
-            <y>30</y>
-            <width>82</width>
-            <height>24</height>
-           </rect>
-          </property>
-          <property name="decimals">
-           <number>2</number>
-          </property>
-         </widget>
+        </widget>
+       </item>
+       <item row="5" column="1">
+        <widget class="QSpinBox" name="busCapacitySpinBox">
+         <property name="minimum">
+          <number>0</number>
+         </property>
         </widget>
        </item>
       </layout>
      </widget>
+     <widget class="QWidget" name="parkingRatesTab">
+      <attribute name="title">
+       <string>Parking Rates</string>
+      </attribute>
+      <layout class="QFormLayout" name="formLayout_3">
+       <item row="0" column="0">
+        <widget class="QLabel" name="bikeRateLabel">
+         <property name="text">
+          <string>Bike Rate/Hour:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QDoubleSpinBox" name="bikeRateSpinBox">
+         <property name="minimum">
+          <double>0.000000000000000</double>
+         </property>
+         <property name="maximum">
+          <double>999.990000000000009</double>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="minivanRateLabel">
+         <property name="text">
+          <string>Minivan Rate/Hour:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QDoubleSpinBox" name="minivanRateSpinBox">
+         <property name="minimum">
+          <double>0.000000000000000</double>
+         </property>
+         <property name="maximum">
+          <double>999.990000000000009</double>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="carRateLabel">
+         <property name="text">
+          <string>Car Rate/Hour:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QDoubleSpinBox" name="carRateSpinBox">
+         <property name="minimum">
+          <double>0.000000000000000</double>
+         </property>
+         <property name="maximum">
+          <double>999.990000000000009</double>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="busRateLabel">
+         <property name="text">
+          <string>Bus Rate/Hour:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QDoubleSpinBox" name="busRateSpinBox">
+         <property name="minimum">
+          <double>0.000000000000000</double>
+         </property>
+         <property name="maximum">
+          <double>999.990000000000009</double>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="customVehiclesTab">
+      <attribute name="title">
+       <string>Custom Vehicles</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="customVehiclesLayout">
+       <item>
+        <widget class="QTableWidget" name="customVehicleTableWidget">
+         <property name="columnCount">
+          <number>2</number>
+         </property>
+         <attribute name="horizontalHeaderDefaultSectionSize">
+          <number>150</number>
+         </attribute>
+         <column>
+          <property name="text">
+           <string>Vehicle Type</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Rate/Hour</string>
+          </property>
+         </column>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <item>
+          <widget class="QDoubleSpinBox" name="newVehicleRateSpinBox">
+           <property name="minimum">
+            <double>0.000000000000000</double>
+           </property>
+           <property name="maximum">
+            <double>999.990000000000009</double>
+           </property>F
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="addCustomVehicleButton">
+           <property name="text">
+            <string>Add Vehicle</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="removeCustomVehicleButton">
+           <property name="text">
+            <string>Remove</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="saveParkingInfoButton">
+     <property name="text">
+      <string>Save and Continue</string>
+     </property>
     </widget>
    </item>
   </layout>

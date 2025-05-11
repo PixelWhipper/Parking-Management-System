@@ -1,9 +1,10 @@
 # ninja log v6
-33	187	7685091314666119	parking-management-system-kaustuv_autogen/timestamp	472eeaebc2a7f9b4
-33	187	7685091314666119	parking-management-system-kaustuv_autogen/mocs_compilation.cpp	472eeaebc2a7f9b4
-33	187	7685091314666119	C:/Users/LOQ/Documents/parking-management-system-kaustuv/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/parking-management-system-kaustuv_autogen/timestamp	472eeaebc2a7f9b4
-33	187	7685091314666119	C:/Users/LOQ/Documents/parking-management-system-kaustuv/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/parking-management-system-kaustuv_autogen/mocs_compilation.cpp	472eeaebc2a7f9b4
-2461	2905	7685091338955000	parking-management-system-kaustuv.exe	ff05ae1ce90637d
-573	3424	7685045887340931	CMakeFiles/parking-management-system-kaustuv.dir/parking-management-system-kaustuv_autogen/mocs_compilation.cpp.obj	7089e3d1acd51157
-190	2461	7685091316239045	CMakeFiles/parking-management-system-kaustuv.dir/mainwindow.cpp.obj	f471a304ae296b5f
-187	2159	7685091316219140	CMakeFiles/parking-management-system-kaustuv.dir/main.cpp.obj	16f930d9b6e3781
+30	602	7685625697964463	parking-management-system-kaustuv_autogen/mocs_compilation.cpp	472eeaebc2a7f9b4
+30	602	7685625697964463	parking-management-system-kaustuv_autogen/timestamp	472eeaebc2a7f9b4
+30	602	7685625697964463	C:/Users/LOQ/Documents/parking-management-system-kaustuv/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/parking-management-system-kaustuv_autogen/timestamp	472eeaebc2a7f9b4
+2855	3071	7685625721006816	parking-management-system-kaustuv.exe	12085c02d2c067d7
+30	602	7685625697964463	C:/Users/LOQ/Documents/parking-management-system-kaustuv/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/parking-management-system-kaustuv_autogen/mocs_compilation.cpp	472eeaebc2a7f9b4
+603	2438	7685625698433289	CMakeFiles/parking-management-system-kaustuv.dir/parking-management-system-kaustuv_autogen/mocs_compilation.cpp.obj	7089e3d1acd51157
+608	2684	7685625698589523	CMakeFiles/parking-management-system-kaustuv.dir/mainwindow.cpp.obj	f471a304ae296b5f
+606	2373	7685625698433289	CMakeFiles/parking-management-system-kaustuv.dir/main.cpp.obj	16f930d9b6e3781
+611	2855	7685625698589523	CMakeFiles/parking-management-system-kaustuv.dir/admin.cpp.obj	ec779bf1989b8384

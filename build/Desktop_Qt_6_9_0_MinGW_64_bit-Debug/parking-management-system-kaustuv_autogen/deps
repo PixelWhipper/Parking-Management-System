@@ -1,5 +1,5 @@
 parking-management-system-kaustuv_autogen/timestamp: \
-	C:/Qt/6.9.0/mingw_64/include/QtCore/QMap \
+	C:/Qt/6.9.0/mingw_64/include/QtCore/QString \
 	C:/Qt/6.9.0/mingw_64/include/QtCore/q17memory.h \
 	C:/Qt/6.9.0/mingw_64/include/QtCore/q20functional.h \
 	C:/Qt/6.9.0/mingw_64/include/QtCore/q20iterator.h \
@@ -152,6 +152,7 @@ parking-management-system-kaustuv_autogen/timestamp: \
 	C:/Qt/6.9.0/mingw_64/include/QtGui/qwindowdefs.h \
 	C:/Qt/6.9.0/mingw_64/include/QtGui/qwindowdefs_win.h \
 	C:/Qt/6.9.0/mingw_64/include/QtWidgets/QMainWindow \
+	C:/Qt/6.9.0/mingw_64/include/QtWidgets/QWidget \
 	C:/Qt/6.9.0/mingw_64/include/QtWidgets/qmainwindow.h \
 	C:/Qt/6.9.0/mingw_64/include/QtWidgets/qsizepolicy.h \
 	C:/Qt/6.9.0/mingw_64/include/QtWidgets/qtabwidget.h \
@@ -575,6 +576,8 @@ parking-management-system-kaustuv_autogen/timestamp: \
 	C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/vadefs.h \
 	C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wchar.h \
 	C:/Users/LOQ/Documents/parking-management-system-kaustuv/CMakeLists.txt \
+	C:/Users/LOQ/Documents/parking-management-system-kaustuv/admin.cpp \
+	C:/Users/LOQ/Documents/parking-management-system-kaustuv/admin.h \
 	C:/Users/LOQ/Documents/parking-management-system-kaustuv/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/.qtc/package-manager/auto-setup.cmake \
 	C:/Users/LOQ/Documents/parking-management-system-kaustuv/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/CMakeFiles/3.30.5/CMakeCXXCompiler.cmake \
 	C:/Users/LOQ/Documents/parking-management-system-kaustuv/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/CMakeFiles/3.30.5/CMakeRCCompiler.cmake \
@@ -583,5 +586,6 @@ parking-management-system-kaustuv_autogen/timestamp: \
 	C:/Users/LOQ/Documents/parking-management-system-kaustuv/main.cpp \
 	C:/Users/LOQ/Documents/parking-management-system-kaustuv/mainwindow.cpp \
 	C:/Users/LOQ/Documents/parking-management-system-kaustuv/mainwindow.h \
+	C:/Users/LOQ/Documents/parking-management-system-kaustuv/admin.ui \
 	C:/Users/LOQ/Documents/parking-management-system-kaustuv/mainwindow.ui \
 	C:/Qt/Tools/CMake_64/bin/cmake.exe

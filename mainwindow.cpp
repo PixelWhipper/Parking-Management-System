@@ -20,7 +20,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->adminButton, &QPushButton::clicked, this, &MainWindow::on_adminButton_clicked);
     connect(ui->userButton, &QPushButton::clicked, this, &MainWindow::on_userButton_clicked);
 
-    ui->stackedWidget->setCurrentWidget(ui->loginPage); // Ensure login page is the initial view
+    ui->stackedWidget->setCurrentWidget(ui->loginPage);
 }
 
 MainWindow::~MainWindow()
