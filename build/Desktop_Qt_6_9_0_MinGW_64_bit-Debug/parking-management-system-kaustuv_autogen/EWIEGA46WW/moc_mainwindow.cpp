@@ -7,7 +7,6 @@
 *****************************************************************************/
 
 #include "../../../../mainwindow.h"
-#include <QtGui/qtextcursor.h>
 #include <QtCore/qmetatype.h>
 
 #include <QtCore/qtmochelpers.h>
@@ -40,28 +39,28 @@ template <> constexpr inline auto MainWindow::qt_create_metaobjectdata<qt_meta_t
     namespace QMC = QtMocConstants;
     QtMocHelpers::StringRefStorage qt_stringData {
         "MainWindow",
-        "attemptLogin",
+        "Login",
         "",
-        "showDashboard",
-        "incrementSpot",
-        "decrementSpot",
-        "toggleParkingLog",
-        "checked"
+        "Signup",
+        "switchSignup",
+        "switchLogin",
+        "on_adminButton_clicked",
+        "on_userButton_clicked"
     };
 
     QtMocHelpers::UintData qt_methods {
-        // Slot 'attemptLogin'
+        // Slot 'Login'
         QtMocHelpers::SlotData<void()>(1, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'showDashboard'
+        // Slot 'Signup'
         QtMocHelpers::SlotData<void()>(3, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'incrementSpot'
+        // Slot 'switchSignup'
         QtMocHelpers::SlotData<void()>(4, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'decrementSpot'
+        // Slot 'switchLogin'
         QtMocHelpers::SlotData<void()>(5, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'toggleParkingLog'
-        QtMocHelpers::SlotData<void(bool)>(6, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { QMetaType::Bool, 7 },
-        }}),
+        // Slot 'on_adminButton_clicked'
+        QtMocHelpers::SlotData<void()>(6, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'on_userButton_clicked'
+        QtMocHelpers::SlotData<void()>(7, 2, QMC::AccessPrivate, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -85,14 +84,16 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
     auto *_t = static_cast<MainWindow *>(_o);
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
-        case 0: _t->attemptLogin(); break;
-        case 1: _t->showDashboard(); break;
-        case 2: _t->incrementSpot(); break;
-        case 3: _t->decrementSpot(); break;
-        case 4: _t->toggleParkingLog((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1]))); break;
+        case 0: _t->Login(); break;
+        case 1: _t->Signup(); break;
+        case 2: _t->switchSignup(); break;
+        case 3: _t->switchLogin(); break;
+        case 4: _t->on_adminButton_clicked(); break;
+        case 5: _t->on_userButton_clicked(); break;
         default: ;
         }
     }
+    (void)_a;
 }
 
 const QMetaObject *MainWindow::metaObject() const
@@ -114,14 +115,14 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 5)
+        if (_id < 6)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 5;
+        _id -= 6;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 5)
+        if (_id < 6)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 5;
+        _id -= 6;
     }
     return _id;
 }

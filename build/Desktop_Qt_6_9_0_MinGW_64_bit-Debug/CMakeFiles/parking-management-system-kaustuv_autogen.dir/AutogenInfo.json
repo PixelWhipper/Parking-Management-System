@@ -332,6 +332,12 @@
 	"HEADERS" : 
 	[
 		[
+			"C:/Users/LOQ/Documents/parking-management-system-kaustuv/AdminInputUI.h",
+			"MU",
+			"EWIEGA46WW/moc_AdminInputUI.cpp",
+			null
+		],
+		[
 			"C:/Users/LOQ/Documents/parking-management-system-kaustuv/mainwindow.h",
 			"MU",
 			"EWIEGA46WW/moc_mainwindow.cpp",
@@ -409,6 +415,11 @@
 	"SETTINGS_FILE" : "C:/Users/LOQ/Documents/parking-management-system-kaustuv/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/CMakeFiles/parking-management-system-kaustuv_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
+		[
+			"C:/Users/LOQ/Documents/parking-management-system-kaustuv/admininput.cpp",
+			"MU",
+			null
+		],
 		[
 			"C:/Users/LOQ/Documents/parking-management-system-kaustuv/main.cpp",
 			"MU",

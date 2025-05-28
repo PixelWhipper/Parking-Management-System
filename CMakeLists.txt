@@ -23,6 +23,20 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(parking-management-system-kaustuv
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
+        AdminInputUI.ui
+        AdminInputUI.h
+        admininput.cpp
+        parkingmanagement.ui
+        vehicle.ui
+        exitvehicle.ui
+        statusvehicle.ui
+
+
+
+
+
+
+
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET parking-management-system-kaustuv APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR

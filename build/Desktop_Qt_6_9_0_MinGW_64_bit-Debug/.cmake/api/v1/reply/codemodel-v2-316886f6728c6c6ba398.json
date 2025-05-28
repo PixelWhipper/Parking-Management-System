@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-3ce1e17b849b69e3254e.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "parking-management-system-kaustuv",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "parking-management-system-kaustuv::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-parking-management-system-kaustuv-Debug-53af1b351c3a37306fc2.json",
+					"name" : "parking-management-system-kaustuv",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "parking-management-system-kaustuv_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-parking-management-system-kaustuv_autogen-Debug-ba08b825cb3216cb1083.json",
+					"name" : "parking-management-system-kaustuv_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "parking-management-system-kaustuv_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-parking-management-system-kaustuv_autogen_timestamp_deps-Debug-e98df34569328a31d9d6.json",
+					"name" : "parking-management-system-kaustuv_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/LOQ/Documents/parking-management-system-kaustuv/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug",
+		"source" : "C:/Users/LOQ/Documents/parking-management-system-kaustuv"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

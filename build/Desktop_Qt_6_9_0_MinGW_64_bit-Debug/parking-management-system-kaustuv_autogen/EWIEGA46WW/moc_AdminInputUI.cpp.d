@@ -1,0 +1,2 @@
+C:/Users/LOQ/Documents/parking-management-system-kaustuv/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/parking-management-system-kaustuv_autogen/EWIEGA46WW/moc_AdminInputUI.cpp: C:/Users/LOQ/Documents/parking-management-system-kaustuv/AdminInputUI.h \
+  C:/Users/LOQ/Documents/parking-management-system-kaustuv/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/parking-management-system-kaustuv_autogen/moc_predefs.h

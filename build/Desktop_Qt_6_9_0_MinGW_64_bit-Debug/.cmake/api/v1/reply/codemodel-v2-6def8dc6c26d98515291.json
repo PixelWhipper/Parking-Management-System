@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-1daa9c897de5f61696b5.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "parking-management-system",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "parking-management-system::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-parking-management-system-Debug-6a711b1ad084f3d67baf.json",
+					"name" : "parking-management-system",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "parking-management-system_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-parking-management-system_autogen-Debug-f892cd241705711c60d2.json",
+					"name" : "parking-management-system_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "parking-management-system_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-parking-management-system_autogen_timestamp_deps-Debug-0066473aaef991598b0d.json",
+					"name" : "parking-management-system_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/yajju/OneDrive/Documents/parking-management-system/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug",
+		"source" : "C:/Users/yajju/OneDrive/Documents/parking-management-system"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

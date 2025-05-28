@@ -11,16 +11,12 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QCheckBox>
 #include <QtWidgets/QFormLayout>
-#include <QtWidgets/QFrame>
-#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QStackedLayout>
-#include <QtWidgets/QTextEdit>
+#include <QtWidgets/QStackedWidget>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
@@ -30,9 +26,9 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralwidget;
-    QStackedLayout *stackedWidget;
+    QStackedWidget *stackedWidget;
     QWidget *loginPage;
-    QVBoxLayout *verticalLayout_2;
+    QVBoxLayout *verticalLayoutLogin;
     QLabel *loginTitle;
     QFormLayout *loginForm;
     QLabel *emailLabel;
@@ -40,23 +36,21 @@ public:
     QLabel *passwordLabel_login;
     QLineEdit *passwordEdit_login;
     QPushButton *loginButton;
-    QLabel *forgotPasswordLabel;
     QLabel *signUpLabel;
-    QWidget *dashboardPage;
-    QVBoxLayout *verticalLayout;
-    QLabel *dashboardTitle;
-    QLabel *spotCounterTitle;
-    QHBoxLayout *horizontalLayout_2;
-    QLabel *availableSpotsLabel;
-    QLabel *occupiedSpotsLabel;
-    QHBoxLayout *horizontalLayout;
-    QPushButton *parkCarButton;
-    QPushButton *carLeftButton;
-    QCheckBox *enableLogCheckBox;
-    QFrame *parkingLogFrame;
-    QVBoxLayout *verticalLayout_3;
-    QLabel *parkingLogTitle;
-    QTextEdit *parkingLogTextEdit;
+    QWidget *signUpPage;
+    QVBoxLayout *verticalLayoutSignUp;
+    QLabel *signUpTitle;
+    QFormLayout *signUpForm;
+    QLabel *emailLabel_signup;
+    QLineEdit *emailEdit_signup;
+    QLabel *passwordLabel_signup;
+    QLineEdit *passwordEdit_signup;
+    QPushButton *signUpButton;
+    QWidget *roleSelectPage;
+    QVBoxLayout *verticalLayoutRole;
+    QLabel *roleTitle;
+    QPushButton *adminButton;
+    QPushButton *userButton;
 
     void setupUi(QMainWindow *MainWindow)
     {
@@ -65,22 +59,22 @@ public:
         MainWindow->resize(600, 400);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
-        stackedWidget = new QStackedLayout(centralwidget);
+        stackedWidget = new QStackedWidget(centralwidget);
         stackedWidget->setObjectName("stackedWidget");
-        loginPage = new QWidget(centralwidget);
+        stackedWidget->setGeometry(QRect(0, 0, 600, 400));
+        loginPage = new QWidget();
         loginPage->setObjectName("loginPage");
-        verticalLayout_2 = new QVBoxLayout(loginPage);
-        verticalLayout_2->setObjectName("verticalLayout_2");
-        verticalLayout_2->setContentsMargins(0, 0, 0, 0);
+        verticalLayoutLogin = new QVBoxLayout(loginPage);
+        verticalLayoutLogin->setObjectName("verticalLayoutLogin");
         loginTitle = new QLabel(loginPage);
         loginTitle->setObjectName("loginTitle");
         QFont font;
         font.setPointSize(24);
         font.setBold(true);
         loginTitle->setFont(font);
-        loginTitle->setAlignment(Qt::AlignCenter);
+        loginTitle->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
-        verticalLayout_2->addWidget(loginTitle);
+        verticalLayoutLogin->addWidget(loginTitle);
 
         loginForm = new QFormLayout();
         loginForm->setObjectName("loginForm");
@@ -101,134 +95,100 @@ public:
 
         passwordEdit_login = new QLineEdit(loginPage);
         passwordEdit_login->setObjectName("passwordEdit_login");
-        passwordEdit_login->setEchoMode(QLineEdit::Password);
+        passwordEdit_login->setEchoMode(QLineEdit::EchoMode::Password);
 
         loginForm->setWidget(1, QFormLayout::ItemRole::FieldRole, passwordEdit_login);
 
 
-        verticalLayout_2->addLayout(loginForm);
+        verticalLayoutLogin->addLayout(loginForm);
 
         loginButton = new QPushButton(loginPage);
         loginButton->setObjectName("loginButton");
-        loginButton->setStyleSheet(QString::fromUtf8("\n"
-"QPushButton {\n"
-"  background-color: #2d89ef;\n"
-"  color: white;\n"
-"  padding: 10px;\n"
-"  border-radius: 8px;\n"
-"  font-size: 14px;\n"
-"}\n"
-"QPushButton:hover {\n"
-"  background-color: #1b6dc1;\n"
-"}\n"
-"          "));
 
-        verticalLayout_2->addWidget(loginButton);
-
-        forgotPasswordLabel = new QLabel(loginPage);
-        forgotPasswordLabel->setObjectName("forgotPasswordLabel");
-        forgotPasswordLabel->setAlignment(Qt::AlignCenter);
-        forgotPasswordLabel->setOpenExternalLinks(true);
-
-        verticalLayout_2->addWidget(forgotPasswordLabel);
+        verticalLayoutLogin->addWidget(loginButton);
 
         signUpLabel = new QLabel(loginPage);
         signUpLabel->setObjectName("signUpLabel");
-        signUpLabel->setAlignment(Qt::AlignCenter);
-        signUpLabel->setOpenExternalLinks(true);
+        signUpLabel->setAlignment(Qt::AlignmentFlag::AlignCenter);
+        signUpLabel->setOpenExternalLinks(false);
 
-        verticalLayout_2->addWidget(signUpLabel);
-
+        verticalLayoutLogin->addWidget(signUpLabel);
 
         stackedWidget->addWidget(loginPage);
+        signUpPage = new QWidget();
+        signUpPage->setObjectName("signUpPage");
+        verticalLayoutSignUp = new QVBoxLayout(signUpPage);
+        verticalLayoutSignUp->setObjectName("verticalLayoutSignUp");
+        signUpTitle = new QLabel(signUpPage);
+        signUpTitle->setObjectName("signUpTitle");
+        signUpTitle->setFont(font);
+        signUpTitle->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
-        dashboardPage = new QWidget(centralwidget);
-        dashboardPage->setObjectName("dashboardPage");
-        verticalLayout = new QVBoxLayout(dashboardPage);
-        verticalLayout->setObjectName("verticalLayout");
-        verticalLayout->setContentsMargins(0, 0, 0, 0);
-        dashboardTitle = new QLabel(dashboardPage);
-        dashboardTitle->setObjectName("dashboardTitle");
-        dashboardTitle->setFont(font);
-        dashboardTitle->setAlignment(Qt::AlignCenter);
+        verticalLayoutSignUp->addWidget(signUpTitle);
 
-        verticalLayout->addWidget(dashboardTitle);
+        signUpForm = new QFormLayout();
+        signUpForm->setObjectName("signUpForm");
+        emailLabel_signup = new QLabel(signUpPage);
+        emailLabel_signup->setObjectName("emailLabel_signup");
 
-        spotCounterTitle = new QLabel(dashboardPage);
-        spotCounterTitle->setObjectName("spotCounterTitle");
+        signUpForm->setWidget(0, QFormLayout::ItemRole::LabelRole, emailLabel_signup);
+
+        emailEdit_signup = new QLineEdit(signUpPage);
+        emailEdit_signup->setObjectName("emailEdit_signup");
+
+        signUpForm->setWidget(0, QFormLayout::ItemRole::FieldRole, emailEdit_signup);
+
+        passwordLabel_signup = new QLabel(signUpPage);
+        passwordLabel_signup->setObjectName("passwordLabel_signup");
+
+        signUpForm->setWidget(1, QFormLayout::ItemRole::LabelRole, passwordLabel_signup);
+
+        passwordEdit_signup = new QLineEdit(signUpPage);
+        passwordEdit_signup->setObjectName("passwordEdit_signup");
+        passwordEdit_signup->setEchoMode(QLineEdit::EchoMode::Password);
+
+        signUpForm->setWidget(1, QFormLayout::ItemRole::FieldRole, passwordEdit_signup);
+
+
+        verticalLayoutSignUp->addLayout(signUpForm);
+
+        signUpButton = new QPushButton(signUpPage);
+        signUpButton->setObjectName("signUpButton");
+
+        verticalLayoutSignUp->addWidget(signUpButton);
+
+        stackedWidget->addWidget(signUpPage);
+        roleSelectPage = new QWidget();
+        roleSelectPage->setObjectName("roleSelectPage");
+        verticalLayoutRole = new QVBoxLayout(roleSelectPage);
+        verticalLayoutRole->setObjectName("verticalLayoutRole");
+        roleTitle = new QLabel(roleSelectPage);
+        roleTitle->setObjectName("roleTitle");
         QFont font1;
-        font1.setPointSize(14);
-        spotCounterTitle->setFont(font1);
-        spotCounterTitle->setAlignment(Qt::AlignCenter);
+        font1.setPointSize(20);
+        font1.setBold(true);
+        roleTitle->setFont(font1);
+        roleTitle->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
-        verticalLayout->addWidget(spotCounterTitle);
+        verticalLayoutRole->addWidget(roleTitle);
 
-        horizontalLayout_2 = new QHBoxLayout();
-        horizontalLayout_2->setObjectName("horizontalLayout_2");
-        availableSpotsLabel = new QLabel(dashboardPage);
-        availableSpotsLabel->setObjectName("availableSpotsLabel");
-        availableSpotsLabel->setAlignment(Qt::AlignCenter);
+        adminButton = new QPushButton(roleSelectPage);
+        adminButton->setObjectName("adminButton");
 
-        horizontalLayout_2->addWidget(availableSpotsLabel);
+        verticalLayoutRole->addWidget(adminButton);
 
-        occupiedSpotsLabel = new QLabel(dashboardPage);
-        occupiedSpotsLabel->setObjectName("occupiedSpotsLabel");
-        occupiedSpotsLabel->setAlignment(Qt::AlignCenter);
+        userButton = new QPushButton(roleSelectPage);
+        userButton->setObjectName("userButton");
 
-        horizontalLayout_2->addWidget(occupiedSpotsLabel);
+        verticalLayoutRole->addWidget(userButton);
 
-
-        verticalLayout->addLayout(horizontalLayout_2);
-
-        horizontalLayout = new QHBoxLayout();
-        horizontalLayout->setObjectName("horizontalLayout");
-        parkCarButton = new QPushButton(dashboardPage);
-        parkCarButton->setObjectName("parkCarButton");
-
-        horizontalLayout->addWidget(parkCarButton);
-
-        carLeftButton = new QPushButton(dashboardPage);
-        carLeftButton->setObjectName("carLeftButton");
-
-        horizontalLayout->addWidget(carLeftButton);
-
-
-        verticalLayout->addLayout(horizontalLayout);
-
-        enableLogCheckBox = new QCheckBox(dashboardPage);
-        enableLogCheckBox->setObjectName("enableLogCheckBox");
-
-        verticalLayout->addWidget(enableLogCheckBox);
-
-        parkingLogFrame = new QFrame(dashboardPage);
-        parkingLogFrame->setObjectName("parkingLogFrame");
-        parkingLogFrame->setFrameShape(QFrame::StyledPanel);
-        verticalLayout_3 = new QVBoxLayout(parkingLogFrame);
-        verticalLayout_3->setObjectName("verticalLayout_3");
-        parkingLogTitle = new QLabel(parkingLogFrame);
-        parkingLogTitle->setObjectName("parkingLogTitle");
-        QFont font2;
-        font2.setPointSize(12);
-        parkingLogTitle->setFont(font2);
-        parkingLogTitle->setAlignment(Qt::AlignCenter);
-
-        verticalLayout_3->addWidget(parkingLogTitle);
-
-        parkingLogTextEdit = new QTextEdit(parkingLogFrame);
-        parkingLogTextEdit->setObjectName("parkingLogTextEdit");
-        parkingLogTextEdit->setReadOnly(true);
-
-        verticalLayout_3->addWidget(parkingLogTextEdit);
-
-
-        verticalLayout->addWidget(parkingLogFrame);
-
-
-        stackedWidget->addWidget(dashboardPage);
-
+        stackedWidget->addWidget(roleSelectPage);
         MainWindow->setCentralWidget(centralwidget);
 
         retranslateUi(MainWindow);
+
+        stackedWidget->setCurrentIndex(2);
+
 
         QMetaObject::connectSlotsByName(MainWindow);
     } // setupUi
@@ -240,16 +200,14 @@ public:
         emailLabel->setText(QCoreApplication::translate("MainWindow", "Email", nullptr));
         passwordLabel_login->setText(QCoreApplication::translate("MainWindow", "Password", nullptr));
         loginButton->setText(QCoreApplication::translate("MainWindow", "Login", nullptr));
-        forgotPasswordLabel->setText(QCoreApplication::translate("MainWindow", "<a href=\"#\">Forgot Password?</a>", nullptr));
-        signUpLabel->setText(QCoreApplication::translate("MainWindow", "Don't have an account? <a href=\"#\">Sign up</a>", nullptr));
-        dashboardTitle->setText(QCoreApplication::translate("MainWindow", "Dashboard", nullptr));
-        spotCounterTitle->setText(QCoreApplication::translate("MainWindow", "Real-time Spot Counter", nullptr));
-        availableSpotsLabel->setText(QCoreApplication::translate("MainWindow", "Available Spots: 10", nullptr));
-        occupiedSpotsLabel->setText(QCoreApplication::translate("MainWindow", "Occupied Spots: 0", nullptr));
-        parkCarButton->setText(QCoreApplication::translate("MainWindow", "Parked a car", nullptr));
-        carLeftButton->setText(QCoreApplication::translate("MainWindow", "Car left", nullptr));
-        enableLogCheckBox->setText(QCoreApplication::translate("MainWindow", "Enable Parking Log", nullptr));
-        parkingLogTitle->setText(QCoreApplication::translate("MainWindow", "Parking Log", nullptr));
+        signUpLabel->setText(QCoreApplication::translate("MainWindow", "Don't have an account? <a href=\"signup\">Sign up</a>", nullptr));
+        signUpTitle->setText(QCoreApplication::translate("MainWindow", "Sign Up", nullptr));
+        emailLabel_signup->setText(QCoreApplication::translate("MainWindow", "Email", nullptr));
+        passwordLabel_signup->setText(QCoreApplication::translate("MainWindow", "Password", nullptr));
+        signUpButton->setText(QCoreApplication::translate("MainWindow", "Sign Up", nullptr));
+        roleTitle->setText(QCoreApplication::translate("MainWindow", "Select Role", nullptr));
+        adminButton->setText(QCoreApplication::translate("MainWindow", "Admin", nullptr));
+        userButton->setText(QCoreApplication::translate("MainWindow", "User", nullptr));
     } // retranslateUi
 
 };
