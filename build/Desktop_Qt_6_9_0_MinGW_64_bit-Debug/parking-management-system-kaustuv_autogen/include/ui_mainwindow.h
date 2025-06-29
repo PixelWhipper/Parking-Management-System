@@ -12,12 +12,10 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QFormLayout>
-#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QRadioButton>
 #include <QtWidgets/QStackedWidget>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
@@ -37,10 +35,6 @@ public:
     QLineEdit *emailEdit;
     QLabel *passwordLabel_login;
     QLineEdit *passwordEdit_login;
-    QWidget *roleSelection;
-    QHBoxLayout *horizontalLayout_2;
-    QRadioButton *adminRadioButton;
-    QRadioButton *userRadioButton;
     QPushButton *loginButton;
     QLabel *signUpLabel;
     QWidget *signUpPage;
@@ -52,7 +46,11 @@ public:
     QLabel *passwordLabel_signup;
     QLineEdit *passwordEdit_signup;
     QPushButton *signUpButton;
-    QWidget *mainAppPage;
+    QWidget *roleSelectPage;
+    QVBoxLayout *verticalLayoutRole;
+    QLabel *roleTitle;
+    QPushButton *adminButton;
+    QPushButton *userButton;
 
     void setupUi(QMainWindow *MainWindow)
     {
@@ -103,24 +101,6 @@ public:
 
 
         verticalLayoutLogin->addLayout(loginForm);
-
-        roleSelection = new QWidget(loginPage);
-        roleSelection->setObjectName("roleSelection");
-        horizontalLayout_2 = new QHBoxLayout(roleSelection);
-        horizontalLayout_2->setObjectName("horizontalLayout_2");
-        adminRadioButton = new QRadioButton(roleSelection);
-        adminRadioButton->setObjectName("adminRadioButton");
-
-        horizontalLayout_2->addWidget(adminRadioButton);
-
-        userRadioButton = new QRadioButton(roleSelection);
-        userRadioButton->setObjectName("userRadioButton");
-        userRadioButton->setChecked(true);
-
-        horizontalLayout_2->addWidget(userRadioButton);
-
-
-        verticalLayoutLogin->addWidget(roleSelection);
 
         loginButton = new QPushButton(loginPage);
         loginButton->setObjectName("loginButton");
@@ -178,14 +158,36 @@ public:
         verticalLayoutSignUp->addWidget(signUpButton);
 
         stackedWidget->addWidget(signUpPage);
-        mainAppPage = new QWidget();
-        mainAppPage->setObjectName("mainAppPage");
-        stackedWidget->addWidget(mainAppPage);
+        roleSelectPage = new QWidget();
+        roleSelectPage->setObjectName("roleSelectPage");
+        verticalLayoutRole = new QVBoxLayout(roleSelectPage);
+        verticalLayoutRole->setObjectName("verticalLayoutRole");
+        roleTitle = new QLabel(roleSelectPage);
+        roleTitle->setObjectName("roleTitle");
+        QFont font1;
+        font1.setPointSize(20);
+        font1.setBold(true);
+        roleTitle->setFont(font1);
+        roleTitle->setAlignment(Qt::AlignmentFlag::AlignCenter);
+
+        verticalLayoutRole->addWidget(roleTitle);
+
+        adminButton = new QPushButton(roleSelectPage);
+        adminButton->setObjectName("adminButton");
+
+        verticalLayoutRole->addWidget(adminButton);
+
+        userButton = new QPushButton(roleSelectPage);
+        userButton->setObjectName("userButton");
+
+        verticalLayoutRole->addWidget(userButton);
+
+        stackedWidget->addWidget(roleSelectPage);
         MainWindow->setCentralWidget(centralwidget);
 
         retranslateUi(MainWindow);
 
-        stackedWidget->setCurrentIndex(2);
+        stackedWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -197,14 +199,15 @@ public:
         loginTitle->setText(QCoreApplication::translate("MainWindow", "Login", nullptr));
         emailLabel->setText(QCoreApplication::translate("MainWindow", "Email", nullptr));
         passwordLabel_login->setText(QCoreApplication::translate("MainWindow", "Password", nullptr));
-        adminRadioButton->setText(QCoreApplication::translate("MainWindow", "Admin", nullptr));
-        userRadioButton->setText(QCoreApplication::translate("MainWindow", "User", nullptr));
         loginButton->setText(QCoreApplication::translate("MainWindow", "Login", nullptr));
         signUpLabel->setText(QCoreApplication::translate("MainWindow", "Don't have an account? <a href=\"signup\">Sign up</a>", nullptr));
         signUpTitle->setText(QCoreApplication::translate("MainWindow", "Sign Up", nullptr));
         emailLabel_signup->setText(QCoreApplication::translate("MainWindow", "Email", nullptr));
         passwordLabel_signup->setText(QCoreApplication::translate("MainWindow", "Password", nullptr));
         signUpButton->setText(QCoreApplication::translate("MainWindow", "Sign Up", nullptr));
+        roleTitle->setText(QCoreApplication::translate("MainWindow", "Select Role", nullptr));
+        adminButton->setText(QCoreApplication::translate("MainWindow", "Admin", nullptr));
+        userButton->setText(QCoreApplication::translate("MainWindow", "User", nullptr));
     } // retranslateUi
 
 };

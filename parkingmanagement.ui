@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ParkingManagementUI</class>
+ <widget class="QWidget" name="ParkingManagementUI">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>950</width>
+    <height>700</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>🚘 Parking Management Dashboard</string>
+  </property>
+  <layout class="QVBoxLayout" name="mainLayout">
+   <item>
+    <widget class="QLabel" name="titleLabel">
+     <property name="styleSheet">
+      <string notr="true">font-size: 24px; font-weight: bold; color: #2e3b4e; padding: 10px;</string>
+     </property>
+     <property name="text">
+      <string>🚗 Parking Management System</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="topSectionLayout">
+     <item>
+      <widget class="QGroupBox" name="controlGroup">
+       <property name="title">
+        <string>Vehicle Operations</string>
+       </property>
+       <layout class="QHBoxLayout" name="topButtonsLayout">
+        <item>
+         <widget class="QPushButton" name="addEntryButton">
+          <property name="styleSheet">
+           <string notr="true">padding: 8px 16px; font-weight: bold; background-color: #0D47A1; border-radius: 4px;</string>
+          </property>
+          <property name="text">
+           <string>➕ Add Vehicle Entry</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="processExitButton">
+          <property name="styleSheet">
+           <string notr="true">padding: 8px 16px; font-weight: bold; background-color: #0D47A1; border-radius: 4px;</string>
+          </property>
+          <property name="text">
+           <string>🚪 Process Exit</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="refreshButton">
+          <property name="styleSheet">
+           <string notr="true">padding: 8px 16px; font-weight: bold; background-color: #0D47A1; border-radius: 4px;</string>
+          </property>
+          <property name="text">
+           <string>🔄 Check Status</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="tableGroup">
+     <property name="title">
+      <string>Parked Vehicles</string>
+     </property>
+     <layout class="QVBoxLayout">
+      <item>
+       <widget class="QTableWidget" name="parkingTable">
+        <property name="styleSheet">
+         <string notr="true">font-size: 14px; selection-background-color: #90caf9; gridline-color: #ddd;</string>
+        </property>
+        <property name="alternatingRowColors">
+         <bool>true</bool>
+        </property>
+        <property name="rowCount">
+         <number>0</number>
+        </property>
+        <property name="columnCount">
+         <number>6</number>
+        </property>
+        <column>
+         <property name="text">
+          <string>Vehicle No</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Vehicle Type</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Entry Time</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Exit Time</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Slot</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Status</string>
+         </property>
+        </column>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="statusLabel">
+     <property name="styleSheet">
+      <string notr="true">font-style: italic; color: #666; margin-top: 6px;</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignRight</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

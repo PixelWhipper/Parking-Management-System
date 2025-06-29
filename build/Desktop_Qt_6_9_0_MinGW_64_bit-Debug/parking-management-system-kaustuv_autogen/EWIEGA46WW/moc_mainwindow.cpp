@@ -39,40 +39,31 @@ template <> constexpr inline auto MainWindow::qt_create_metaobjectdata<qt_meta_t
     namespace QMC = QtMocConstants;
     QtMocHelpers::StringRefStorage qt_stringData {
         "MainWindow",
-        "loginclicked",
+        "Login",
         "",
-        "on_signUpLabel_linkActivated",
-        "link",
-        "signUpButtonclicked",
-        "handleParkingInfoSaved",
-        "location",
-        "levels",
-        "bikeCapacity",
-        "minivanCapacity",
-        "carCapacity",
-        "busCapacity",
-        "handleAdminWindowClosed",
-        "handleAddCustomVehicleRequest"
+        "Signup",
+        "switchSignup",
+        "switchLogin",
+        "on_adminButton_clicked",
+        "on_userButton_clicked",
+        "onAdminWindowClosed"
     };
 
     QtMocHelpers::UintData qt_methods {
-        // Slot 'loginclicked'
+        // Slot 'Login'
         QtMocHelpers::SlotData<void()>(1, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'on_signUpLabel_linkActivated'
-        QtMocHelpers::SlotData<void(const QString &)>(3, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { QMetaType::QString, 4 },
-        }}),
-        // Slot 'signUpButtonclicked'
+        // Slot 'Signup'
+        QtMocHelpers::SlotData<void()>(3, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'switchSignup'
+        QtMocHelpers::SlotData<void()>(4, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'switchLogin'
         QtMocHelpers::SlotData<void()>(5, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'handleParkingInfoSaved'
-        QtMocHelpers::SlotData<void(const QString &, int, int, int, int, int)>(6, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { QMetaType::QString, 7 }, { QMetaType::Int, 8 }, { QMetaType::Int, 9 }, { QMetaType::Int, 10 },
-            { QMetaType::Int, 11 }, { QMetaType::Int, 12 },
-        }}),
-        // Slot 'handleAdminWindowClosed'
-        QtMocHelpers::SlotData<void()>(13, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'handleAddCustomVehicleRequest'
-        QtMocHelpers::SlotData<void()>(14, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'on_adminButton_clicked'
+        QtMocHelpers::SlotData<void()>(6, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'on_userButton_clicked'
+        QtMocHelpers::SlotData<void()>(7, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'onAdminWindowClosed'
+        QtMocHelpers::SlotData<void()>(8, 2, QMC::AccessPrivate, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -96,15 +87,17 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
     auto *_t = static_cast<MainWindow *>(_o);
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
-        case 0: _t->loginclicked(); break;
-        case 1: _t->on_signUpLabel_linkActivated((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
-        case 2: _t->signUpButtonclicked(); break;
-        case 3: _t->handleParkingInfoSaved((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<int>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<int>>(_a[3])),(*reinterpret_cast< std::add_pointer_t<int>>(_a[4])),(*reinterpret_cast< std::add_pointer_t<int>>(_a[5])),(*reinterpret_cast< std::add_pointer_t<int>>(_a[6]))); break;
-        case 4: _t->handleAdminWindowClosed(); break;
-        case 5: _t->handleAddCustomVehicleRequest(); break;
+        case 0: _t->Login(); break;
+        case 1: _t->Signup(); break;
+        case 2: _t->switchSignup(); break;
+        case 3: _t->switchLogin(); break;
+        case 4: _t->on_adminButton_clicked(); break;
+        case 5: _t->on_userButton_clicked(); break;
+        case 6: _t->onAdminWindowClosed(); break;
         default: ;
         }
     }
+    (void)_a;
 }
 
 const QMetaObject *MainWindow::metaObject() const
@@ -126,14 +119,14 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 6)
+        if (_id < 7)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 6;
+        _id -= 7;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 6)
+        if (_id < 7)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 6;
+        _id -= 7;
     }
     return _id;
 }

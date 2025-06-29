@@ -23,11 +23,18 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(parking-management-system-kaustuv
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
+        AdminInputUI.ui
+        AdminInputUI.h
+        AdminInputUI.cpp
+        parkingmanagement.ui
+        vehicle.ui
+        exitvehicle.ui
+        statusvehicle.ui
 
 
 
-        admin.h
-        admin.ui
+
+
 
 
     )

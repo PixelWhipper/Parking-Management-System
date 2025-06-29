@@ -73,6 +73,14 @@ build CMakeFiles/parking-management-system-kaustuv.dir/mainwindow.cpp.obj: CXX_C
   OBJECT_DIR = CMakeFiles\parking-management-system-kaustuv.dir
   OBJECT_FILE_DIR = CMakeFiles\parking-management-system-kaustuv.dir
 
+build CMakeFiles/parking-management-system-kaustuv.dir/AdminInputUI.cpp.obj: CXX_COMPILER__parking-management-system-kaustuv_unscanned_Debug C$:/Users/LOQ/Documents/parking-management-system-kaustuv/AdminInputUI.cpp || cmake_object_order_depends_target_parking-management-system-kaustuv
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\parking-management-system-kaustuv.dir\AdminInputUI.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/LOQ/Documents/parking-management-system-kaustuv/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/parking-management-system-kaustuv_autogen/include -isystem C:/Qt/6.9.0/mingw_64/include/QtCore -isystem C:/Qt/6.9.0/mingw_64/include -isystem C:/Qt/6.9.0/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.9.0/mingw_64/include/QtWidgets -isystem C:/Qt/6.9.0/mingw_64/include/QtGui
+  OBJECT_DIR = CMakeFiles\parking-management-system-kaustuv.dir
+  OBJECT_FILE_DIR = CMakeFiles\parking-management-system-kaustuv.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target parking-management-system-kaustuv
@@ -81,7 +89,7 @@ build CMakeFiles/parking-management-system-kaustuv.dir/mainwindow.cpp.obj: CXX_C
 #############################################
 # Link the executable parking-management-system-kaustuv.exe
 
-build parking-management-system-kaustuv.exe: CXX_EXECUTABLE_LINKER__parking-management-system-kaustuv_Debug CMakeFiles/parking-management-system-kaustuv.dir/parking-management-system-kaustuv_autogen/mocs_compilation.cpp.obj CMakeFiles/parking-management-system-kaustuv.dir/main.cpp.obj CMakeFiles/parking-management-system-kaustuv.dir/mainwindow.cpp.obj | C$:/Qt/6.9.0/mingw_64/lib/libQt6Widgets.a C$:/Qt/6.9.0/mingw_64/lib/libQt6Gui.a C$:/Qt/6.9.0/mingw_64/lib/libQt6Core.a C$:/Qt/6.9.0/mingw_64/lib/libQt6EntryPoint.a || parking-management-system-kaustuv_autogen parking-management-system-kaustuv_autogen_timestamp_deps
+build parking-management-system-kaustuv.exe: CXX_EXECUTABLE_LINKER__parking-management-system-kaustuv_Debug CMakeFiles/parking-management-system-kaustuv.dir/parking-management-system-kaustuv_autogen/mocs_compilation.cpp.obj CMakeFiles/parking-management-system-kaustuv.dir/main.cpp.obj CMakeFiles/parking-management-system-kaustuv.dir/mainwindow.cpp.obj CMakeFiles/parking-management-system-kaustuv.dir/AdminInputUI.cpp.obj | C$:/Qt/6.9.0/mingw_64/lib/libQt6Widgets.a C$:/Qt/6.9.0/mingw_64/lib/libQt6Gui.a C$:/Qt/6.9.0/mingw_64/lib/libQt6Core.a C$:/Qt/6.9.0/mingw_64/lib/libQt6EntryPoint.a || parking-management-system-kaustuv_autogen parking-management-system-kaustuv_autogen_timestamp_deps
   FLAGS = -DQT_QML_DEBUG -g
   LINK_FLAGS = -mwindows
   LINK_LIBRARIES = C:/Qt/6.9.0/mingw_64/lib/libQt6Widgets.a  C:/Qt/6.9.0/mingw_64/lib/libQt6Gui.a  C:/Qt/6.9.0/mingw_64/lib/libQt6Core.a  -lmpr  -luserenv  -lmingw32  C:/Qt/6.9.0/mingw_64/lib/libQt6EntryPoint.a  -lshell32  -ld3d11  -ldxgi  -ldxguid  -ld3d12  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
@@ -168,7 +176,7 @@ build parking-management-system-kaustuv_autogen_timestamp_deps: phony
 #############################################
 # Utility command for parking-management-system-kaustuv_autogen
 
-build parking-management-system-kaustuv_autogen: phony CMakeFiles/parking-management-system-kaustuv_autogen parking-management-system-kaustuv_autogen/include/ui_mainwindow.h parking-management-system-kaustuv_autogen/include/ui_admin.h parking-management-system-kaustuv_autogen/timestamp parking-management-system-kaustuv_autogen/mocs_compilation.cpp parking-management-system-kaustuv_autogen_timestamp_deps
+build parking-management-system-kaustuv_autogen: phony CMakeFiles/parking-management-system-kaustuv_autogen parking-management-system-kaustuv_autogen/include/ui_mainwindow.h parking-management-system-kaustuv_autogen/include/ui_AdminInputUI.h parking-management-system-kaustuv_autogen/include/ui_parkingmanagement.h parking-management-system-kaustuv_autogen/include/ui_vehicle.h parking-management-system-kaustuv_autogen/include/ui_exitvehicle.h parking-management-system-kaustuv_autogen/include/ui_statusvehicle.h parking-management-system-kaustuv_autogen/timestamp parking-management-system-kaustuv_autogen/mocs_compilation.cpp parking-management-system-kaustuv_autogen_timestamp_deps
 
 
 #############################################
@@ -185,7 +193,7 @@ build parking-management-system-kaustuv_autogen/timestamp parking-management-sys
 #############################################
 # Phony custom command for CMakeFiles\parking-management-system-kaustuv_autogen
 
-build CMakeFiles/parking-management-system-kaustuv_autogen parking-management-system-kaustuv_autogen/include/ui_mainwindow.h parking-management-system-kaustuv_autogen/include/ui_admin.h | ${cmake_ninja_workdir}CMakeFiles/parking-management-system-kaustuv_autogen ${cmake_ninja_workdir}parking-management-system-kaustuv_autogen/include/ui_mainwindow.h ${cmake_ninja_workdir}parking-management-system-kaustuv_autogen/include/ui_admin.h: phony parking-management-system-kaustuv_autogen/timestamp || parking-management-system-kaustuv_autogen_timestamp_deps
+build CMakeFiles/parking-management-system-kaustuv_autogen parking-management-system-kaustuv_autogen/include/ui_mainwindow.h parking-management-system-kaustuv_autogen/include/ui_AdminInputUI.h parking-management-system-kaustuv_autogen/include/ui_parkingmanagement.h parking-management-system-kaustuv_autogen/include/ui_vehicle.h parking-management-system-kaustuv_autogen/include/ui_exitvehicle.h parking-management-system-kaustuv_autogen/include/ui_statusvehicle.h | ${cmake_ninja_workdir}CMakeFiles/parking-management-system-kaustuv_autogen ${cmake_ninja_workdir}parking-management-system-kaustuv_autogen/include/ui_mainwindow.h ${cmake_ninja_workdir}parking-management-system-kaustuv_autogen/include/ui_AdminInputUI.h ${cmake_ninja_workdir}parking-management-system-kaustuv_autogen/include/ui_parkingmanagement.h ${cmake_ninja_workdir}parking-management-system-kaustuv_autogen/include/ui_vehicle.h ${cmake_ninja_workdir}parking-management-system-kaustuv_autogen/include/ui_exitvehicle.h ${cmake_ninja_workdir}parking-management-system-kaustuv_autogen/include/ui_statusvehicle.h: phony parking-management-system-kaustuv_autogen/timestamp || parking-management-system-kaustuv_autogen_timestamp_deps
 
 # =============================================================================
 # Target aliases.
