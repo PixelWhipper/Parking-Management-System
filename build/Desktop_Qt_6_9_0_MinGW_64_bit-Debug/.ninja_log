@@ -1,0 +1,14 @@
+# ninja log v6
+60	316	7699811095195693	parking-management-system-kaustuv_autogen/timestamp	472eeaebc2a7f9b4
+60	316	7699811095195693	parking-management-system-kaustuv_autogen/mocs_compilation.cpp	472eeaebc2a7f9b4
+60	316	7699811095195693	C:/Users/LOQ/Documents/parking-management-system-kaustuv/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/parking-management-system-kaustuv_autogen/timestamp	472eeaebc2a7f9b4
+60	316	7699811095195693	C:/Users/LOQ/Documents/parking-management-system-kaustuv/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/parking-management-system-kaustuv_autogen/mocs_compilation.cpp	472eeaebc2a7f9b4
+2855	3071	7685625721006816	parking-management-system-kaustuv.exe	12085c02d2c067d7
+317	3197	7699811095925183	CMakeFiles/parking-management-system-kaustuv.dir/parking-management-system-kaustuv_autogen/mocs_compilation.cpp.obj	7089e3d1acd51157
+320	3145	7699811095955232	CMakeFiles/parking-management-system-kaustuv.dir/mainwindow.cpp.obj	f471a304ae296b5f
+596	2340	7694411058151900	CMakeFiles/parking-management-system-kaustuv.dir/main.cpp.obj	16f930d9b6e3781
+611	2855	7685625698589523	CMakeFiles/parking-management-system-kaustuv.dir/admin.cpp.obj	ec779bf1989b8384
+18	650	7701089765740341	build.ninja	9a224ed8df0c2785
+602	3416	7694411058207081	CMakeFiles/parking-management-system-kaustuv.dir/admininput.cpp.obj	a0f4edbbff360d1
+23	48	7694410969409121	CMakeFiles/clean.additional	baedbe210acaa455
+49	58	7694410969669137	clean	577b940aee94fbd7

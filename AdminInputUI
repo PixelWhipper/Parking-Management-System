@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AdminInputUI</class>
+ <widget class="QWidget" name="AdminInputUI">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>500</width>
+    <height>750</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Admin Parking Lot Input</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QLabel" name="labelTitle">
+     <property name="styleSheet">
+      <string notr="true">font-weight: bold; font-size: 16px;</string>
+     </property>
+     <property name="text">
+      <string>Enter Parking Lot Details</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLineEdit" name="nameEdit">
+     <property name="placeholderText">
+      <string>Parking Lot Name</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLineEdit" name="locationEdit">
+     <property name="placeholderText">
+      <string>Location</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="rateLabel">
+     <property name="styleSheet">
+      <string notr="true">font-weight: bold;</string>
+     </property>
+     <property name="text">
+      <string>Rates Per Hour and Capacities:</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="carRateLayout">
+     <item>
+      <widget class="QDoubleSpinBox" name="rateCar">
+       <property name="prefix">
+        <string>Car: NPR </string>
+       </property>
+       <property name="suffix">
+        <string>/hr</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QSpinBox" name="capacityCar">
+       <property name="prefix">
+        <string>Capacity: </string>
+       </property>
+       <property name="maximum">
+        <number>1000</number>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="bikeRateLayout">
+     <item>
+      <widget class="QDoubleSpinBox" name="rateBike">
+       <property name="prefix">
+        <string>Bike: NPR </string>
+       </property>
+       <property name="suffix">
+        <string>/hr</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QSpinBox" name="capacityBike">
+       <property name="prefix">
+        <string>Capacity: </string>
+       </property>
+       <property name="maximum">
+        <number>1000</number>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="busRateLayout">
+     <item>
+      <widget class="QDoubleSpinBox" name="rateBus">
+       <property name="prefix">
+        <string>Bus: NPR </string>
+       </property>
+       <property name="suffix">
+        <string>/hr</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QSpinBox" name="capacityBus">
+       <property name="prefix">
+        <string>Capacity: </string>
+       </property>
+       <property name="maximum">
+        <number>1000</number>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="minivanRateLayout">
+     <item>
+      <widget class="QDoubleSpinBox" name="rateMinivan">
+       <property name="prefix">
+        <string>Minivan: NPR </string>
+       </property>
+       <property name="suffix">
+        <string>/hr</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QSpinBox" name="capacityMinivan">
+       <property name="prefix">
+        <string>Capacity: </string>
+       </property>
+       <property name="maximum">
+        <number>1000</number>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QSpinBox" name="handicappedSpotsSpinBox">
+     <property name="prefix">
+      <string>Handicapped Spots: </string>
+     </property>
+     <property name="maximum">
+      <number>1000</number>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="customLabel">
+     <property name="styleSheet">
+      <string notr="true">font-weight: bold;</string>
+     </property>
+     <property name="text">
+      <string>Custom Vehicle Rate</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="customVehicleLayout">
+     <item>
+      <widget class="QLineEdit" name="customVehicleName">
+       <property name="placeholderText">
+        <string>Vehicle Type</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QDoubleSpinBox" name="customRate">
+       <property name="prefix">
+        <string>NPR </string>
+       </property>
+       <property name="suffix">
+        <string>/hr</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QSpinBox" name="customCapacity">
+       <property name="prefix">
+        <string>Capacity: </string>
+       </property>
+       <property name="maximum">
+        <number>1000</number>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="addCustomRateButton">
+       <property name="text">
+        <string>Add</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QListWidget" name="customVehicleList"/>
+   </item>
+   <item>
+    <widget class="QPushButton" name="saveButton">
+     <property name="text">
+      <string>Save</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
