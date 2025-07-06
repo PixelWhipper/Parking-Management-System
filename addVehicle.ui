@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AddVehicleDialog</class>
+ <widget class="QDialog" name="AddVehicleDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>700</width>
+    <height>550</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Add Vehicle</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">
+    QDialog {
+        background-color: #F0FFF0; /* Very Light Green */
+    }
+    QLabel {
+        font-family: &quot;Inter&quot;;
+        font-size: 14px;
+        color: #333333; /* Ensure label text is dark */
+    }
+    QLineEdit, QComboBox, QDateTimeEdit {
+        border: 1px solid #E0E0E0;
+        border-radius: 6px;
+        padding: 8px 12px;
+        font-family: &quot;Inter&quot;;
+        font-size: 14px;
+        color: #333333;
+        background-color: #FFFFFF;
+    }
+    QLineEdit:focus, QComboBox:focus, QDateTimeEdit:focus {
+        border: 1px solid #4285F4;
+    }
+    QPushButton {
+        border-radius: 6px;
+        padding: 10px 20px;
+        font-family: &quot;Inter&quot;;
+        font-size: 15px;
+        font-weight: bold;
+        color: #FFFFFF;
+        background-color: #4285F4; /* Blue */
+        border: none;
+    }
+    QPushButton:hover {
+        background-color: #357AE8;
+    }
+    QPushButton#cancelButton { /* Targeting by objectName */
+        background-color: #6c757d; /* Grey for Cancel */
+    }
+    QPushButton#cancelButton:hover {
+        background-color: #5a6268;
+    }
+    /* Style for the main header */
+    #headerFrame {
+        background-color: #FFFFFF;
+        border-bottom: 1px solid #E0E0E0;
+        padding: 15px 20px;
+        margin-bottom: 20px;
+    }
+    #headerTitleLabel {
+        font-family: &quot;Inter&quot;;
+        font-size: 20px;
+        font-weight: bold;
+        color: #333333;
+    }
+    /* Explicitly set background for formFrame to white */
+    #formFrame {
+        background-color: #FFFFFF;
+    }
+   </string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_main">
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <!-- Header Frame for "Add Vehicle" title -->
+    <widget class="QFrame" name="headerFrame">
+     <property name="frameShape">
+      <enum>QFrame::Shape::NoFrame</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Shadow::Raised</enum>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_header">
+      <property name="leftMargin">
+       <number>20</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>20</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QLabel" name="headerTitleLabel">
+        <property name="text">
+         <string>Add Vehicle</string>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>20</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_header">
+        <property name="orientation">
+         <enum>Qt::Orientation::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <!-- Main content area for form fields -->
+    <widget class="QFrame" name="formFrame">
+     <property name="frameShape">
+      <enum>QFrame::Shape::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Shadow::Raised</enum>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_form">
+      <property name="spacing">
+       <number>15</number>
+      </property>
+      <property name="leftMargin">
+       <number>20</number>
+      </property>
+      <property name="topMargin">
+       <number>20</number>
+      </property>
+      <property name="rightMargin">
+       <number>20</number>
+      </property>
+      <property name="bottomMargin">
+       <number>20</number>
+      </property>
+      <!-- Row 0: Vehicle Timestamp / Vehicle Number -->
+      <item row="0" column="0">
+       <widget class="QLabel" name="timestampLabel">
+        <property name="text">
+         <string>Vehicle Timestamp *</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QDateTimeEdit" name="timestampDateTimeEdit">
+        <property name="displayFormat">
+         <string>yyyy-MM-dd HH:mm:ss</string>
+        </property>
+        <property name="calendarPopup">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <widget class="QLabel" name="vehicleNumberLabel">
+        <property name="text">
+         <string>Vehicle Number *</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="3">
+       <widget class="QLineEdit" name="vehicleNumberLineEdit"/>
+      </item>
+
+      <!-- Row 1: Vehicle Category / Vehicle Price Per Hour -->
+      <item row="1" column="0">
+       <widget class="QLabel" name="categoryLabel">
+        <property name="text">
+         <string>Vehicle Category *</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QComboBox" name="categoryComboBox">
+        <item>
+         <property name="text">
+          <string>-Select-</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Car</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Motorcycle</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Truck</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <widget class="QLabel" name="pricePerHourLabel">
+        <property name="text">
+         <string>Price Per Hour ($) *</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="3">
+       <widget class="QLineEdit" name="pricePerHourLineEdit">
+        <property name="inputMask">
+         <string>999.99</string>
+        </property>
+        <property name="placeholderText">
+         <string>e.g., 2.50</string>
+        </property>
+       </widget>
+      </item>
+
+      <!-- Row 2: Name of the Driver -->
+      <item row="2" column="0">
+       <widget class="QLabel" name="driverNameLabel">
+        <property name="text">
+         <string>Driver Name *</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1" colspan="3">
+       <widget class="QLineEdit" name="driverNameLineEdit"/>
+      </item>
+      
+      <!-- Spacer to push content to top -->
+      <item row="3" column="0" colspan="4">
+       <spacer name="verticalSpacer_form">
+        <property name="orientation">
+         <enum>Qt::Orientation::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <!-- Buttons Frame -->
+    <widget class="QFrame" name="buttonsFrame">
+     <property name="frameShape">
+      <enum>QFrame::Shape::NoFrame</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Shadow::Raised</enum>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_buttons">
+      <property name="spacing">
+       <number>10</number>
+      </property>
+      <property name="leftMargin">
+       <number>20</number>
+      </property>
+      <property name="topMargin">
+       <number>10</number>
+      </property>
+      <property name="rightMargin">
+       <number>20</number>
+      </property>
+      <property name="bottomMargin">
+       <number>20</number>
+      </property>
+      <item>
+       <spacer name="horizontalSpacer_buttons">
+        <property name="orientation">
+         <enum>Qt::Orientation::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="submitButton">
+        <property name="text">
+         <string>Submit</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="cancelButton">
+        <property name="text">
+         <string>Cancel</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

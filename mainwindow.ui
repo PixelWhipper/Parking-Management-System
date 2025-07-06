@@ -1,0 +1,871 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1200</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>VPMS Admin Dashboard</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">
+    QMainWindow {
+        background-color: #F5F7FA; /* Light grey background */
+    }
+    /* Header Styling */
+    #headerFrame {
+        background-color: #FFFFFF;
+        border-bottom: 1px solid #E0E0E0;
+        padding: 10px 20px;
+    }
+    #adminLabel {
+        font-family: &quot;Inter&quot;;
+        font-size: 24px;
+        font-weight: bold;
+        color: #333333;
+    }
+    #adminLabel .highlight {
+        color: #4285F4; /* Blue accent for 'Admin' */
+    }
+    #menuIconLabel, #userIconLabel {
+        font-size: 28px;
+        color: #666666;
+    }
+
+    /* Sidebar Styling */
+    #sidebarFrame {
+        background-color: #FFFFFF;
+        border-right: 1px solid #E0E0E0;
+    }
+    #sidebarListWidget {
+        border: none;
+        background-color: transparent;
+        padding: 10px 0;
+    }
+    #sidebarListWidget::item {
+        padding: 12px 20px;
+        color: #666666;
+        font-family: &quot;Inter&quot;;
+        font-size: 15px;
+        border-left: 4px solid transparent; /* For active indicator */
+    }
+    #sidebarListWidget::item:selected {
+        background-color: #E6F0FF; /* Light blue background for selected */
+        color: #4285F4; /* Blue text for selected */
+        border-left: 4px solid #4285F4; /* Blue indicator for selected */
+        font-weight: bold;
+    }
+    #sidebarListWidget::item:hover:!selected {
+        background-color: #F0F2F5; /* Slightly darker hover for unselected */
+    }
+    /* Style for icons in list items (if using iconMode) */
+    #sidebarListWidget QAbstractItemView::indicator {
+        width: 24px; /* Adjust as needed */
+        height: 24px;
+        margin-right: 10px;
+    }
+
+    /* Dashboard Cards Styling */
+    /* Target QFrames whose objectName starts with 'card' */
+    QFrame[objectName^=&quot;card&quot;] {
+        background-color: #FFFFFF;
+        border-radius: 8px;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+    }
+    /* Target QLabels with the custom dynamic property 'cssClass' set to 'cardValue' */
+    QLabel[cssClass=&quot;cardValue&quot;] {
+        font-family: &quot;Inter&quot;;
+        font-size: 36px;
+        font-weight: bold;
+        color: #333333;
+    }
+    /* Target QLabels with the custom dynamic property 'cssClass' set to 'cardTitle' */
+    QLabel[cssClass=&quot;cardTitle&quot;] {
+        font-family: &quot;Inter&quot;;
+        font-size: 14px;
+        color: #666666;
+    }
+    /* Target QLabels with the custom dynamic property 'cssClass' set to 'cardIcon' */
+    QLabel[cssClass=&quot;cardIcon&quot;] {
+        font-size: 40px; /* Adjust icon size */
+        padding: 8px;
+        border-radius: 50%;
+    }
+    #carIcon1 { background-color: #F8FBF8; color: #6FCF97; } /* Green */
+    #carIcon2 { background-color: #F8F0FF; color: #BB6BD9; } /* Purple */
+    #carIcon3 { background-color: #E6F0FF; color: #4285F4; } /* Blue */
+    #carIcon4 { background-color: #FFF0E6; color: #FF9F42; } /* Orange */
+    #userIcon { background-color: #E6F0FF; color: #4285F4; }
+    #categoryIcon { background-color: #F8FBF8; color: #6FCF97; }
+
+    /* Footer / Main Content Text */
+    #footerTextLabel {
+        font-family: &quot;Inter&quot;;
+        font-size: 16px;
+        color: #999999;
+        text-align: center;
+        padding: 20px;
+    }
+   </string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout_main">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <!-- Sidebar Frame -->
+     <widget class="QFrame" name="sidebarFrame">
+      <property name="minimumSize">
+       <size>
+        <width>220</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>250</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_sidebar">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QListWidget" name="sidebarListWidget">
+         <property name="frameShape">
+          <enum>QFrame::NoFrame</enum>
+         </property>
+         <item>
+          <property name="text">
+           <string>  Dashboard</string>
+          </property>
+          <property name="icon">
+           <iconset>
+            <normaloff>:/icons/dashboard.png</normaloff>
+           </iconset>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>  Vehicle Category</string>
+          </property>
+          <property name="icon">
+           <iconset>
+            <normaloff>:/icons/category.png</normaloff>
+           </iconset>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>  Add Vehicle</string>
+          </property>
+          <property name="icon">
+           <iconset>
+            <normaloff>:/icons/add_vehicle.png</normaloff>
+           </iconset>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>  Manage Vehicle</string>
+          </property>
+          <property name="icon">
+           <iconset>
+            <normaloff>:/icons/manage_vehicle.png</normaloff>
+           </iconset>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>  Reports</string>
+          </property>
+          <property name="icon">
+           <iconset>
+            <normaloff>:/icons/reports.png</normaloff>
+           </iconset>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>  Search Vehicle</string>
+          </property>
+          <property name="icon">
+           <iconset>
+            <normaloff>:/icons/search_vehicle.png</normaloff>
+           </iconset>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>  Reg Users</string>
+          </property>
+          <property name="icon">
+           <iconset>
+            <normaloff>:/icons/reg_users.png</normaloff>
+           </iconset>
+          </property>
+         </item>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <!-- Main Content Area -->
+     <widget class="QFrame" name="contentFrame">
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_content">
+       <property name="spacing">
+        <number>20</number>
+       </property>
+       <property name="leftMargin">
+        <number>20</number>
+       </property>
+       <property name="topMargin">
+        <number>20</number>
+       </property>
+       <property name="rightMargin">
+        <number>20</number>
+       </property>
+       <property name="bottomMargin">
+        <number>20</number>
+       </property>
+       <item>
+        <!-- Header Section -->
+        <widget class="QFrame" name="headerFrame">
+         <property name="frameShape">
+          <enum>QFrame::NoFrame</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_header">
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="adminLabel">
+            <property name="text">
+             <string>Admin</string>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>24</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_header">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QLabel" name="menuIconLabel">
+            <property name="text">
+             <string>☰</string>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>28</pointsize>
+             </font>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_header_2">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QLabel" name="userIconLabel">
+            <property name="text">
+             <string>👤</string>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>28</pointsize>
+             </font>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <!-- Dashboard Card Grid -->
+        <widget class="QFrame" name="cardGridFrame">
+         <property name="frameShape">
+          <enum>QFrame::NoFrame</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_cards">
+          <property name="spacing">
+           <number>20</number>
+          </property>
+          <!-- Card 1: Todays Vehicle Entries -->
+          <item row="0" column="0">
+           <widget class="QFrame" name="card1Frame">
+            <property name="minimumSize">
+             <size>
+              <width>250</width>
+              <height>120</height>
+             </size>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_card1">
+             <property name="spacing">
+              <number>10</number>
+             </property>
+             <property name="leftMargin">
+              <number>20</number>
+             </property>
+             <property name="topMargin">
+              <number>20</number>
+             </property>
+             <property name="rightMargin">
+              <number>20</number>
+             </property>
+             <property name="bottomMargin">
+              <number>20</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="carIcon1">
+               <property name="text">
+                <string>🚗</string>
+               </property>
+               <!-- Custom dynamic property for styling -->
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>-1</pointsize>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">
+                 QLabel {
+                     font-size: 40px; /* Adjust icon size */
+                     padding: 8px;
+                     border-radius: 50%;
+                 }
+                </string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+               </property>
+               <property name="cssClass" stdset="0">
+                <string>cardIcon</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="card1ValueLabel">
+               <property name="text">
+                <string>0</string>
+               </property>
+               <!-- Custom dynamic property for styling -->
+               <property name="cssClass" stdset="0">
+                <string>cardValue</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="card1TitleLabel">
+               <property name="text">
+                <string>Todays Vehicle Entries</string>
+               </property>
+               <!-- Custom dynamic property for styling -->
+               <property name="cssClass" stdset="0">
+                <string>cardTitle</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <!-- Card 2: Yesterdays Vehicle Entries -->
+          <item row="0" column="1">
+           <widget class="QFrame" name="card2Frame">
+            <property name="minimumSize">
+             <size>
+              <width>250</width>
+              <height>120</height>
+             </size>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_card2">
+             <property name="spacing">
+              <number>10</number>
+             </property>
+             <property name="leftMargin">
+              <number>20</number>
+             </property>
+             <property name="topMargin">
+              <number>20</number>
+             </property>
+             <property name="rightMargin">
+              <number>20</number>
+             </property>
+             <property name="bottomMargin">
+              <number>20</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="carIcon2">
+               <property name="text">
+                <string>🚗</string>
+               </property>
+               <!-- Custom dynamic property for styling -->
+               <property name="cssClass" stdset="0">
+                <string>cardIcon</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="card2ValueLabel">
+               <property name="text">
+                <string>0</string>
+               </property>
+               <!-- Custom dynamic property for styling -->
+               <property name="cssClass" stdset="0">
+                <string>cardValue</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="card2TitleLabel">
+               <property name="text">
+                <string>Yesterdays Vehicle Entries</string>
+               </property>
+               <!-- Custom dynamic property for styling -->
+               <property name="cssClass" stdset="0">
+                <string>cardTitle</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <!-- Card 3: Last 7 days Vehicle Entries -->
+          <item row="0" column="2">
+           <widget class="QFrame" name="card3Frame">
+            <property name="minimumSize">
+             <size>
+              <width>250</width>
+              <height>120</height>
+             </size>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_card3">
+             <property name="spacing">
+              <number>10</number>
+             </property>
+             <property name="leftMargin">
+              <number>20</number>
+             </property>
+             <property name="topMargin">
+              <number>20</number>
+             </property>
+             <property name="rightMargin">
+              <number>20</number>
+             </property>
+             <property name="bottomMargin">
+              <number>20</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="carIcon3">
+               <property name="text">
+                <string>🚗</string>
+               </property>
+               <!-- Custom dynamic property for styling -->
+               <property name="cssClass" stdset="0">
+                <string>cardIcon</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="card3ValueLabel">
+               <property name="text">
+                <string>3</string>
+               </property>
+               <!-- Custom dynamic property for styling -->
+               <property name="cssClass" stdset="0">
+                <string>cardValue</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="card3TitleLabel">
+               <property name="text">
+                <string>Last 7 days Vehicle Entries</string>
+               </property>
+               <!-- Custom dynamic property for styling -->
+               <property name="cssClass" stdset="0">
+                <string>cardTitle</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <!-- Card 4: Total Vehicle Entries -->
+          <item row="0" column="3">
+           <widget class="QFrame" name="card4Frame">
+            <property name="minimumSize">
+             <size>
+              <width>250</width>
+              <height>120</height>
+             </size>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_card4">
+             <property name="spacing">
+              <number>10</number>
+             </property>
+             <property name="leftMargin">
+              <number>20</number>
+             </property>
+             <property name="topMargin">
+              <number>20</number>
+             </property>
+             <property name="rightMargin">
+              <number>20</number>
+             </property>
+             <property name="bottomMargin">
+              <number>20</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="carIcon4">
+               <property name="text">
+                <string>🚗</string>
+               </property>
+               <!-- Custom dynamic property for styling -->
+               <property name="cssClass" stdset="0">
+                <string>cardIcon</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="card4ValueLabel">
+               <property name="text">
+                <string>8</string>
+               </property>
+               <!-- Custom dynamic property for styling -->
+               <property name="cssClass" stdset="0">
+                <string>cardValue</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="card4TitleLabel">
+               <property name="text">
+                <string>Total Vehicle Entries</string>
+               </property>
+               <!-- Custom dynamic property for styling -->
+               <property name="cssClass" stdset="0">
+                <string>cardTitle</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <!-- Card 5: Total Registered Users -->
+          <item row="1" column="0">
+           <widget class="QFrame" name="card5Frame">
+            <property name="minimumSize">
+             <size>
+              <width>250</width>
+              <height>120</height>
+             </size>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_card5">
+             <property name="spacing">
+              <number>10</number>
+             </property>
+             <property name="leftMargin">
+              <number>20</number>
+             </property>
+             <property name="topMargin">
+              <number>20</number>
+             </property>
+             <property name="rightMargin">
+              <number>20</number>
+             </property>
+             <property name="bottomMargin">
+              <number>20</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="userIcon">
+               <property name="text">
+                <string>👤</string>
+               </property>
+               <!-- Custom dynamic property for styling -->
+               <property name="cssClass" stdset="0">
+                <string>cardIcon</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="card5ValueLabel">
+               <property name="text">
+                <string>2</string>
+               </property>
+               <!-- Custom dynamic property for styling -->
+               <property name="cssClass" stdset="0">
+                <string>cardValue</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="card5TitleLabel">
+               <property name="text">
+                <string>Total Registered Users</string>
+               </property>
+               <!-- Custom dynamic property for styling -->
+               <property name="cssClass" stdset="0">
+                <string>cardTitle</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <!-- Card 6: Listed Categories -->
+          <item row="1" column="1">
+           <widget class="QFrame" name="card6Frame">
+            <property name="minimumSize">
+             <size>
+              <width>250</width>
+              <height>120</height>
+             </size>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_card6">
+             <property name="spacing">
+              <number>10</number>
+             </property>
+             <property name="leftMargin">
+              <number>20</number>
+             </property>
+             <property name="topMargin">
+              <number>20</number>
+             </property>
+             <property name="rightMargin">
+              <number>20</number>
+             </property>
+             <property name="bottomMargin">
+              <number>20</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="categoryIcon">
+               <property name="text">
+                <string>📄</string>
+               </property>
+               <!-- Custom dynamic property for styling -->
+               <property name="cssClass" stdset="0">
+                <string>cardIcon</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="card6ValueLabel">
+               <property name="text">
+                <string>3</string>
+               </property>
+               <!-- Custom dynamic property for styling -->
+               <property name="cssClass" stdset="0">
+                <string>cardValue</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="card6TitleLabel">
+               <property name="text">
+                <string>Listed Categories</string>
+               </property>
+               <!-- Custom dynamic property for styling -->
+               <property name="cssClass" stdset="0">
+                <string>cardTitle</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="1" column="2">
+           <spacer name="horizontalSpacer_card_row2">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="1" column="3">
+           <spacer name="horizontalSpacer_card_row2_2">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer_content">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item alignment="Qt::AlignCenter">
+        <widget class="QLabel" name="footerTextLabel">
+         <property name="text">
+          <string>Vehicle Parking Management System</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1200</width>
+     <height>25</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
