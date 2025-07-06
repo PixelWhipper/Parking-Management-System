@@ -1,0 +1,493 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>750</width>
+    <height>795</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Parking Management System</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QStackedWidget" name="stackedWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>721</width>
+      <height>750</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>3</number>
+    </property>
+    <widget class="QWidget" name="loginPage">
+     <layout class="QVBoxLayout" name="verticalLayoutLogin">
+      <item>
+       <widget class="QLabel" name="loginTitle">
+        <property name="font">
+         <font>
+          <pointsize>24</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Login</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QFormLayout" name="loginForm">
+        <item row="0" column="0">
+         <widget class="QLabel" name="emailLabel">
+          <property name="text">
+           <string>Email</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QLineEdit" name="emailEdit"/>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="passwordLabel_login">
+          <property name="text">
+           <string>Password</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QLineEdit" name="passwordEdit_login">
+          <property name="echoMode">
+           <enum>QLineEdit::Normal</enum>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QPushButton" name="loginButton">
+        <property name="text">
+         <string>Login</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="signUpLabel">
+        <property name="text">
+         <string>Don't have an account? &lt;a href=&quot;signup&quot;&gt;Sign up&lt;/a&gt;</string>
+        </property>
+        <property name="openExternalLinks">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="signUpPage">
+     <layout class="QVBoxLayout" name="verticalLayoutSignUp">
+      <item>
+       <widget class="QLabel" name="signUpTitle">
+        <property name="font">
+         <font>
+          <pointsize>24</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Sign Up</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QFormLayout" name="signUpForm">
+        <item row="0" column="0">
+         <widget class="QLabel" name="emailLabel_signup">
+          <property name="text">
+           <string>Email</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QLineEdit" name="emailEdit_signup"/>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="passwordLabel_signup">
+          <property name="text">
+           <string>Password</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QLineEdit" name="passwordEdit_signup">
+          <property name="echoMode">
+           <enum>QLineEdit::Normal</enum>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QPushButton" name="signUpButton">
+        <property name="text">
+         <string>Sign Up</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="adminDashboard">
+     <layout class="QVBoxLayout" name="verticalLayoutAdmin">
+      <item>
+       <layout class="QHBoxLayout" name="headerLayout">
+        <item>
+         <widget class="QLabel" name="labelTitle">
+          <property name="styleSheet">
+           <string notr="true">font-weight: bold; font-size: 16px;</string>
+          </property>
+          <property name="text">
+           <string>Enter Parking Lot Details</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="nameEdit">
+        <property name="placeholderText">
+         <string>Parking Lot Name</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="locationEdit">
+        <property name="placeholderText">
+         <string>Location</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="rateLabel">
+        <property name="styleSheet">
+         <string notr="true">font-weight: bold;</string>
+        </property>
+        <property name="text">
+         <string>Rates Per Hour and Capacities:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="carRateLayout">
+        <item>
+         <widget class="QDoubleSpinBox" name="rateCar">
+          <property name="prefix">
+           <string>Car: NPR </string>
+          </property>
+          <property name="suffix">
+           <string>/hr</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSpinBox" name="capacityCar">
+          <property name="prefix">
+           <string>Capacity: </string>
+          </property>
+          <property name="maximum">
+           <number>1000</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="bikeRateLayout">
+        <item>
+         <widget class="QDoubleSpinBox" name="rateBike">
+          <property name="prefix">
+           <string>Bike: NPR </string>
+          </property>
+          <property name="suffix">
+           <string>/hr</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSpinBox" name="capacityBike">
+          <property name="prefix">
+           <string>Capacity: </string>
+          </property>
+          <property name="maximum">
+           <number>1000</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="busRateLayout">
+        <item>
+         <widget class="QDoubleSpinBox" name="rateBus">
+          <property name="prefix">
+           <string>Bus: NPR </string>
+          </property>
+          <property name="suffix">
+           <string>/hr</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSpinBox" name="capacityBus">
+          <property name="prefix">
+           <string>Capacity: </string>
+          </property>
+          <property name="maximum">
+           <number>1000</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="minivanRateLayout">
+        <item>
+         <widget class="QDoubleSpinBox" name="rateMinivan">
+          <property name="prefix">
+           <string>Minivan: NPR </string>
+          </property>
+          <property name="suffix">
+           <string>/hr</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSpinBox" name="capacityMinivan">
+          <property name="prefix">
+           <string>Capacity: </string>
+          </property>
+          <property name="maximum">
+           <number>1000</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QSpinBox" name="handicappedSpotsSpinBox">
+        <property name="prefix">
+         <string>Handicapped Spots: </string>
+        </property>
+        <property name="maximum">
+         <number>1000</number>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="customLabel">
+        <property name="styleSheet">
+         <string notr="true">font-weight: bold;</string>
+        </property>
+        <property name="text">
+         <string>Custom Vehicle Rate</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="customVehicleLayout">
+        <item>
+         <widget class="QLineEdit" name="customVehicleName">
+          <property name="placeholderText">
+           <string>Vehicle Type</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QDoubleSpinBox" name="customRate">
+          <property name="prefix">
+           <string>NPR </string>
+          </property>
+          <property name="suffix">
+           <string>/hr</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSpinBox" name="customCapacity">
+          <property name="prefix">
+           <string>Capacity: </string>
+          </property>
+          <property name="maximum">
+           <number>1000</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="addCustomRateButton">
+          <property name="text">
+           <string>Add</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="editCustomRateButton">
+          <property name="text">
+           <string>Edit</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="deleteCustomRateButton">
+          <property name="text">
+           <string>Delete</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QListWidget" name="customVehicleList"/>
+      </item>
+      <item>
+       <widget class="QPushButton" name="saveButton">
+        <property name="text">
+         <string>Save</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="ParkingManagementUI">
+     <property name="windowTitle">
+      <string>🚘 Parking Management Dashboard</string>
+     </property>
+     <layout class="QVBoxLayout" name="mainLayout">
+      <item>
+       <widget class="QLabel" name="titleLabel">
+        <property name="styleSheet">
+         <string notr="true">font-size: 24px; font-weight: bold; color: #2e3b4e; padding: 10px;</string>
+        </property>
+        <property name="text">
+         <string>🚗 Parking Management System</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="topSectionLayout">
+        <item>
+         <widget class="QGroupBox" name="controlGroup">
+          <property name="title">
+           <string>Vehicle Operations</string>
+          </property>
+          <layout class="QHBoxLayout" name="topButtonsLayout">
+           <item>
+            <widget class="QPushButton" name="addEntryButton">
+             <property name="styleSheet">
+              <string notr="true">padding: 8px 16px; font-weight: bold; background-color: #0D47A1; border-radius: 4px;</string>
+             </property>
+             <property name="text">
+              <string>➕ Add Vehicle Entry</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="processExitButton">
+             <property name="styleSheet">
+              <string notr="true">padding: 8px 16px; font-weight: bold; background-color: #0D47A1; border-radius: 4px;</string>
+             </property>
+             <property name="text">
+              <string>🚪 Process Exit</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="refreshButton">
+             <property name="styleSheet">
+              <string notr="true">padding: 8px 16px; font-weight: bold; background-color: #0D47A1; border-radius: 4px;</string>
+             </property>
+             <property name="text">
+              <string>🔄 Check Status</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="tableGroup">
+        <property name="title">
+         <string>Parked Vehicles</string>
+        </property>
+        <layout class="QVBoxLayout">
+         <item>
+          <widget class="QTableWidget" name="parkingTable">
+           <property name="styleSheet">
+            <string notr="true">font-size: 14px; selection-background-color: #90caf9; gridline-color: #ddd;</string>
+           </property>
+           <property name="alternatingRowColors">
+            <bool>true</bool>
+           </property>
+           <property name="rowCount">
+            <number>0</number>
+           </property>
+           <property name="columnCount">
+            <number>6</number>
+           </property>
+           <column>
+            <property name="text">
+             <string>Vehicle No</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Vehicle Type</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Entry Time</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Exit Time</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Slot</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Status</string>
+            </property>
+           </column>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="statusLabel">
+        <property name="styleSheet">
+         <string notr="true">font-style: italic; color: #666; margin-top: 6px;</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
