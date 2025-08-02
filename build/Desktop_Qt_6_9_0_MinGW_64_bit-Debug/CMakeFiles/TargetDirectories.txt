@@ -1,0 +1,5 @@
+C:/Users/LOQ/Documents/parkingmanagementsystem/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/CMakeFiles/parkingmanagementsystem.dir
+C:/Users/LOQ/Documents/parkingmanagementsystem/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/CMakeFiles/edit_cache.dir
+C:/Users/LOQ/Documents/parkingmanagementsystem/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/CMakeFiles/rebuild_cache.dir
+C:/Users/LOQ/Documents/parkingmanagementsystem/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/CMakeFiles/parkingmanagementsystem_autogen_timestamp_deps.dir
+C:/Users/LOQ/Documents/parkingmanagementsystem/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/CMakeFiles/parkingmanagementsystem_autogen.dir

@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+<class>ProcessExitDialog</class>
+<widget class="QDialog" name="ProcessExitDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>500</width>
+    <height>450</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>🚪 Process Vehicle Exit</string>
+  </property>
+  <property name="modal">
+   <bool>true</bool>
+  </property>
+  <layout class="QVBoxLayout" name="mainLayout">
+   <item>
+    <widget class="QLabel" name="titleLabel">
+     <property name="styleSheet">
+      <string notr="true">font-size: 18px; font-weight: bold; color: #2e3b4e; padding: 10px;</string>
+     </property>
+     <property name="text">
+      <string>Vehicle Exit Processing</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="searchGroup">
+     <property name="title">
+      <string>Find Vehicle</string>
+     </property>
+     <layout class="QHBoxLayout" name="searchLayout">
+      <item>
+       <widget class="QLineEdit" name="searchEdit">
+        <property name="styleSheet">
+         <string notr="true">padding: 8px; border: 2px solid #ddd; border-radius: 4px;</string>
+        </property>
+        <property name="placeholderText">
+         <string>Enter vehicle number or slot number</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="searchButton">
+        <property name="styleSheet">
+         <string notr="true">padding: 8px 16px; font-weight: bold; background-color: #2196f3; color: white; border-radius: 4px;</string>
+        </property>
+        <property name="text">
+         <string>🔍 Search</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="vehicleInfoGroup">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="title">
+      <string>Vehicle Details</string>
+     </property>
+     <layout class="QFormLayout" name="infoLayout">
+      <item row="0" column="0">
+       <widget class="QLabel" name="vehicleNoDisplayLabel">
+        <property name="text">
+         <string>Vehicle Number:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLabel" name="vehicleNoDisplay">
+        <property name="styleSheet">
+         <string notr="true">font-weight: bold; color: #2e3b4e;</string>
+        </property>
+        <property name="text">
+         <string>-</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="vehicleTypeDisplayLabel">
+        <property name="text">
+         <string>Vehicle Type</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLabel" name="vehicleTypeDisplay">
+        <property name="styleSheet">
+         <string notr="true">font-weight: bold; color: #2e3b4e;</string>
+        </property>
+        <property name="text">
+         <string>-</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="ownerDisplayLabel">
+        <property name="text">
+         <string>Owner Name:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QLabel" name="ownerDisplay">
+        <property name="styleSheet">
+         <string notr="true">font-weight: bold; color: #2e3b4e;</string>
+        </property>
+        <property name="text">
+         <string>-</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QLabel" name="slotDisplay">
+        <property name="styleSheet">
+         <string notr="true">font-weight: bold; color: #2e3b4e;</string>
+        </property>
+        <property name="text">
+         <string>-</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0">
+       <widget class="QLabel" name="entryTimeDisplayLabel">
+        <property name="text">
+         <string>Entry Time:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1">
+       <widget class="QLabel" name="entryTimeDisplay">
+        <property name="styleSheet">
+         <string notr="true">font-weight: bold; color: #2e3b4e;</string>
+        </property>
+        <property name="text">
+         <string>-</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QLabel" name="slotDisplayLabel">
+        <property name="text">
+         <string>Slot Number:</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="billingGroup">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="title">
+      <string>Billing Information</string>
+     </property>
+     <layout class="QFormLayout" name="billingLayout">
+      <item row="0" column="0">
+       <widget class="QLabel" name="durationLabel">
+        <property name="text">
+         <string>Parking Duration:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLabel" name="durationDisplay">
+        <property name="styleSheet">
+         <string notr="true">font-weight: bold; color: #ff9800;</string>
+        </property>
+        <property name="text">
+         <string>-</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="totalFeeLabel">
+        <property name="text">
+         <string>Total Fee:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLabel" name="totalFeeDisplay">
+        <property name="styleSheet">
+         <string notr="true">font-size: 16px; font-weight: bold; color: #4caf50;</string>
+        </property>
+        <property name="text">
+         <string>NPR 0.00</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="buttonLayout">
+     <item>
+      <widget class="QPushButton" name="cancelButton">
+       <property name="styleSheet">
+        <string notr="true">padding: 10px 20px; font-weight: bold; background-color: #f44336; color: white; border-radius: 4px;</string>
+       </property>
+       <property name="text">
+        <string> Cancel</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="processExitButton">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">padding: 10px 20px; font-weight: bold; background-color: #ff9800; color: white; border-radius: 4px;</string>
+       </property>
+       <property name="text">
+        <string> Exit</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

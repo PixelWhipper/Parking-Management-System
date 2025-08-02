@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AddVehicleDialog</class>
+ <widget class="QDialog" name="AddVehicleDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>500</width>
+    <height>550</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Add Vehicle Entry</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">
+    QDialog {
+        background-color: #363636; /* Dark background */
+        color: #E0E0E0; /* Light text */
+    }
+    QLabel {
+        color: #E0E0E0;
+    }
+    QLineEdit, QComboBox, QDateTimeEdit {
+        background-color: #444444;
+        border: 1px solid #555555;
+        border-radius: 4px;
+        padding: 5px;
+        color: #E0E0E0;
+    }
+    QLineEdit:focus, QComboBox:focus, QDateTimeEdit:focus {
+        border: 1px solid #007bff; /* Highlight on focus */
+    }
+    QComboBox::drop-down {
+        border-left: 1px solid #555555;
+    }
+    QComboBox::down-arrow {
+        image: url(:/icons/down_arrow.png); /* You might need a resource file or remove this line if not using icons */
+    }
+    QGroupBox {
+        border: 1px solid #555555;
+        border-radius: 5px;
+        margin-top: 1ex; /* Space for title */
+        font-weight: bold;
+        color: #BBBBBB;
+    }
+    QGroupBox::title {
+        subcontrol-origin: margin;
+        subcontrol-position: top center; /* Title at top center */
+        padding: 0 3px;
+        background-color: #363636; /* Same as dialog background */
+    }
+    QRadioButton {
+        color: #E0E0E0;
+        spacing: 5px;
+    }
+    QRadioButton::indicator {
+        width: 13px;
+        height: 13px;
+        border-radius: 7px;
+        border: 1px solid #999999;
+        background-color: #555555;
+    }
+    QRadioButton::indicator:checked {
+        background-color: #007bff; /* Blue for checked */
+        border: 1px solid #007bff;
+    }
+    QPushButton {
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-weight: bold;
+        color: white;
+    }
+    #cancelButton {
+        background-color: #dc3545; /* Red */
+        border: 1px solid #dc3545;
+    }
+    #cancelButton:hover {
+        background-color: #c82333;
+    }
+    #addEntryButton { /* Renamed from saveButton for consistency */
+        background-color: #28a745; /* Green */
+        border: 1px solid #28a745;
+    }
+    #addEntryButton:hover {
+        background-color: #218838;
+    }
+    /* Style for the Slot Number QLineEdit when it's disabled */
+    #slotNumberEdit:disabled {
+        background-color: #3a3a3a; /* Slightly darker to indicate disabled */
+        color: #888888; /* Dimmed text */
+        border: 1px solid #4a4a4a;
+    }
+   </string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QLabel" name="dialogTitle">
+     <property name="font">
+      <font>
+       <pointsize>18</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>🚗 Vehicle Entry Registration</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="vehicleInfoGroupBox">
+     <property name="title">
+      <string>Vehicle Information</string>
+     </property>
+     <layout class="QFormLayout" name="formLayout_vehicleInfo">
+      <property name="fieldGrowthPolicy">
+       <enum>QFormLayout::FieldGrowthPolicy::ExpandingFieldsGrow</enum>
+      </property>
+      <property name="rowWrapPolicy">
+       <enum>QFormLayout::RowWrapPolicy::DontWrapRows</enum>
+      </property>
+      <property name="labelAlignment">
+       <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+      </property>
+      <property name="formAlignment">
+       <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop</set>
+      </property>
+      <item row="0" column="0">
+       <widget class="QLabel" name="vehicleNumberLabel">
+        <property name="text">
+         <string>Vehicle Number:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLineEdit" name="vehicleNumberEdit">
+        <property name="placeholderText">
+         <string>e.g., ABC-1234</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="vehicleTypeLabel">
+        <property name="text">
+         <string>Vehicle Type:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QComboBox" name="vehicleTypeComboBox"/>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="ownerNameLabel">
+        <property name="text">
+         <string>Owner Name:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QLineEdit" name="ownerNameEdit">
+        <property name="placeholderText">
+         <string>Enter owner's name</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QLabel" name="phoneNumberLabel">
+        <property name="text">
+         <string>Phone Number:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QLineEdit" name="phoneNumberEdit">
+        <property name="placeholderText">
+         <string>Enter contact number</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="slotAssignmentGroupBox">
+     <property name="title">
+      <string>Slot Assignment</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_slotAssignment">
+      <item>
+       <widget class="QRadioButton" name="autoAssignRadioButton">
+        <property name="text">
+         <string>Auto-assign available slot</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="chooseSpecificRadioButton">
+        <property name="text">
+         <string>Choose specific slot</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="slotNumberEdit">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="placeholderText">
+         <string>Enter specific slot number</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="buttonLayout">
+     <property name="spacing">
+      <number>10</number>
+     </property>
+     <item>
+      <widget class="QPushButton" name="cancelButton">
+       <property name="text">
+        <string>❌ Cancel</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="addEntryButton">
+       <property name="text">
+        <string>✅ Add Entry</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AddVehicle</class>
+ <widget class="QDialog" name="AddVehicle">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>450</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Add Vehicle Entry</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QLabel" name="label_addVehicleTitle">
+     <property name="font">
+      <font>
+       <pointsize>16</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>Add New Vehicle Entry</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QFormLayout" name="formLayout">
+     <property name="horizontalSpacing">
+      <number>10</number>
+     </property>
+     <property name="verticalSpacing">
+      <number>10</number>
+     </property>
+     <item row="0" column="0">
+      <widget class="QLabel" name="label_vehicleNumber">
+       <property name="text">
+        <string>Vehicle Number:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLineEdit" name="vehicleNumberEdit">
+       <property name="placeholderText">
+        <string>e.g., Ba 1 Pa 1234</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_vehicleType">
+       <property name="text">
+        <string>Vehicle Type:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QComboBox" name="vehicleTypeComboBox">
+       <item>
+        <property name="text">
+         <string>Car</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Bike</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Bus</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Minivan</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="label_ownerName">
+       <property name="text">
+        <string>Owner Name:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QLineEdit" name="ownerNameEdit">
+       <property name="placeholderText">
+        <string>Optional</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="label_phoneNumber">
+       <property name="text">
+        <string>Phone Number:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QLineEdit" name="phoneNumberEdit">
+       <property name="placeholderText">
+        <string>Optional</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0">
+      <widget class="QLabel" name="label_assignedSlot">
+       <property name="text">
+        <string>Assigned Slot:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="1">
+      <widget class="QLineEdit" name="slotNumberEdit">
+       <property name="placeholderText">
+        <string>e.g., A1, B5</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="0">
+      <widget class="QLabel" name="label_entryTime">
+       <property name="text">
+        <string>Entry Time:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="1">
+      <widget class="QDateTimeEdit" name="entryTimeDateTimeEdit">
+       <property name="displayFormat">
+        <string>yyyy-MM-dd hh:mm:ss</string>
+       </property>
+       <property name="calendarPopup">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="1">
+      <widget class="QCheckBox" name="handicappedCheckBox">
+       <property name="text">
+        <string>Vehicle requires handicapped spot</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QPushButton" name="addEntryConfirmButton">
+       <property name="text">
+        <string>Add Entry</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="cancelButton">
+       <property name="text">
+        <string>Cancel</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
