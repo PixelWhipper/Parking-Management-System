@@ -13,22 +13,14 @@ ProcessExitDialog::ProcessExitDialog(QList<ParkedVehicle>& vehicles, const Parki
     parkingData(parkingData)
 {
     ui->setupUi(this);
-
-    // Connect signals and slots
     connect(ui->searchButton, &QPushButton::clicked, this, &ProcessExitDialog::on_searchButton_clicked);
     connect(ui->processExitButton, &QPushButton::clicked, this, &ProcessExitDialog::on_processExitButton_clicked);
     connect(ui->cancelButton, &QPushButton::clicked, this, &ProcessExitDialog::on_cancelButton_clicked);
-
-    // Initially disable process exit button and vehicle info groups
     ui->processExitButton->setEnabled(false);
     ui->vehicleInfoGroup->setEnabled(false);
     ui->billingGroup->setEnabled(false);
-
-    // Set window properties
     setWindowTitle("Vehicle Exit Processing");
     setModal(true);
-
-    // Clear initial display
     clearVehicleInfo();
 }
 
@@ -46,17 +38,14 @@ void ProcessExitDialog::on_searchButton_clicked()
         return;
     }
 
-    // Search for the vehicle in the parked vehicles list
     ParkedVehicle* vehicle = findParkedVehicle(vehicleNumber);
 
     if (vehicle && vehicle->status == "Parked") {
-        // Display vehicle information
         displayVehicleInfo(vehicle->vehicleNumber, vehicle->vehicleType,
                            vehicle->ownerName, vehicle->phoneNumber,
                            vehicle->assignedSlot, vehicle->entryTime,
                            vehicle->isHandicapped);
 
-        // Calculate and display fare
         QDateTime currentTime = QDateTime::currentDateTime();
         double totalFare = calculateFare(vehicle->vehicleType, vehicle->entryTime, currentTime);
 
@@ -66,7 +55,6 @@ void ProcessExitDialog::on_searchButton_clicked()
         ui->durationDisplay->setText(QString::number(hours, 'f', 2) + " hours");
         ui->totalFeeDisplay->setText(QString("NPR %1").arg(totalFare, 0, 'f', 2));
 
-        // Enable billing group and process exit button
         ui->billingGroup->setEnabled(true);
         ui->processExitButton->setEnabled(true);
     } else {
@@ -90,23 +78,16 @@ void ProcessExitDialog::on_processExitButton_clicked()
         return;
     }
 
-    // Process the exit
     QDateTime exitTime = QDateTime::currentDateTime();
     vehicle->exitTime = exitTime;
     vehicle->status = "Exited";
 
-    // Calculate final fare and duration
     double totalFare = calculateFare(vehicle->vehicleType, vehicle->entryTime, exitTime);
     qint64 durationSeconds = vehicle->entryTime.secsTo(exitTime);
     double hours = static_cast<double>(durationSeconds) / 3600.0;
 
-    // Show success message
     showExitSuccess(vehicleNumber, totalFare, hours);
-
-    // Emit signal to notify MainWindow
     emit vehicleExited();
-
-    // Close the dialog
     accept();
 }
 
@@ -181,12 +162,10 @@ double ProcessExitDialog::calculateFare(const QString& vehicleType, const QDateT
     qint64 durationSeconds = entryTime.secsTo(exitTime);
     double hours = static_cast<double>(durationSeconds) / 3600.0;
 
-    // Round up to the nearest hour for billing
     hours = std::ceil(hours);
 
     double hourlyRate = 0.0;
 
-    // Get the rate for this vehicle type
     if (vehicleType == "Car") {
         hourlyRate = parkingData.carRate;
     } else if (vehicleType == "Bike") {
